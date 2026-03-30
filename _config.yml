@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Philipp Bauer's Personal Blog
+title: Philipp Bauer's Blog
 description: Articles and insights on AI, infrastructure, and software engineering.
 author: Philipp Bauer
 email: hello@philippbauer.org

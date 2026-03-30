@@ -3,11 +3,8 @@ title: "The AI Infrastructure Bubble: What Actually Gets Built"
 date: 2026-03-30
 permalink: /the-ai-infrastructure-bubble/
 categories: AI, infrastructure, data centers, power, economics
-layout: default
+layout: posts
 ---
-
-# The AI Infrastructure Bubble: What Actually Gets Built
-
 We all have heard the news stories about the build out of hyperscale data centers. I've been following this story for a while now and believed the industry figures that were put out there. Claims of massive investments and stories of concrete not drying fast enough. 
 
 Today I caught a conversation with Ed Zitron – host of the [Better Offline](https://www.betteroffline.com/) podcast – on "The Tech Report" YouTube channel where he pulled back the curtain on what's really happening with data center and power generation construction. The numbers he shared don't match the headlines.
