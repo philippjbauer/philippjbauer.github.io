@@ -16,18 +16,9 @@
         {% include nav.html %}
       </aside>
       <main class="content">
-        <header class="site-header">
-          <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-          {% if site.description %}<p class="site-desc">{{ site.description }}</p>{% endif %}
-        </header>
-
         <article class="post">
           {{ content }}
         </article>
-
-        <footer class="site-footer">
-          <p>&copy; {{ site.time | date: '%Y' }} {{ site.author | default: site.title }}</p>
-        </footer>
       </main>
     </div>
   </body>
