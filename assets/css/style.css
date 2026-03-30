@@ -175,6 +175,27 @@ body {
 .post img { max-width: 100%; height: auto; border-radius: 4px }
 .post hr { border: none; border-top: 1px solid var(--border); margin: 2em 0 }
 
+/* ── Dark mode ────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1117;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --border: #1f2937;
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
+  }
+
+  .sidebar { background: #141820 }
+
+  .post p,
+  .post li { color: #d1d5db }
+  .post-excerpt { color: #9ca3af }
+
+  .post code,
+  .post pre { background: #1e2330; border-color: var(--border) }
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 800px) {
   .site-wrap { flex-direction: column }
