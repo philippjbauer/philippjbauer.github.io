@@ -1,15 +1,22 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: default
+title: Home
 ---
 
 {% if site.posts.size > 0 %}
-  {% assign latest_post = site.posts | first %}
-  
-  <div class="latest-post">
-    <p class="post-meta">{{ latest_post.date | date: "%B %d, %Y" }}</p>
-    {{ latest_post.content }}
-  </div>
+  {% assign latest = site.posts | first %}
+  <span class="post-meta">{{ latest.date | date: "%B %d, %Y" }}</span>
+  {{ latest.content }}
+  <p><a class="read-more" href="{{ latest.url | relative_url }}">Permalink &rarr;</a></p>
 {% endif %}
+
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li class="post-list-item">
+    <span class="post-meta">{{ post.date | date: "%B %d, %Y" }}</span>
+    <h2 class="post-list-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+    <a class="read-more" href="{{ post.url | relative_url }}">Read more &rarr;</a>
+  </li>
+  {% endfor %}
+</ul>
