@@ -100,24 +100,24 @@ I've been skeptical of hype cycles before – metaverse, blockchain, you name it
 
 ## References
 
-1. The Tech Report & Ed Zitron. "The AI boom is a lie: Fake data centres and unused GPUs | Ed Zitron" March 27, 2026. https://www.youtube.com/watch?v=nxUEOdC4VzU
+1. The Tech Report & Ed Zitron. ["The AI boom is a lie: Fake data centres and unused GPUs"](https://www.youtube.com/watch?v=nxUEOdC4VzU) March 27, 2026.
 
-2. Ed Zitron, "Where's your Ed at?"" Newsletter. "The AI Industry Is Lying To You" March 24, 2026. https://www.wheresyoured.at/the-ai-industry-is-lying-to-you
+2. Ed Zitron, "Where's your Ed at?" Newsletter. ["The AI Industry Is Lying To You"](https://www.wheresyoured.at/the-ai-industry-is-lying-to-you) March 24, 2026.
 
-3. Sightline Climate. "Data Center Outlook: Half of 2026 Pipeline May Not Materialize." February 24, 2026. https://www.sightlineclimate.com/research/data-center-outlook
+3. Sightline Climate. ["Data Center Outlook: Half of 2026 Pipeline May Not Materialize."](https://www.sightlineclimate.com/research/data-center-outlook) February 24, 2026.
 
-4. Paul Kedrosky. "Chart of the Day: Data Center Buildout Slowed Sharply" March 19th, 2026. https://paulkedrosky.com/chart-of-the-day-data-center-buildout-slowed-sharply/
+4. Paul Kedrosky. ["Chart of the Day: Data Center Buildout Slowed Sharply"](https://paulkedrosky.com/chart-of-the-day-data-center-buildout-slowed-sharply/) March 19th, 2026.
 
-5. The Guardian. "Elon Musk’s xAI datacenter generating extra electricity illegally, regulator rules" January 15, 2026. https://www.theguardian.com/technology/2026/jan/15/elon-musk-xai-datacenter-memphis
+5. The Guardian. ["Elon Musk's xAI datacenter generating extra electricity illegally, regulator rules"](https://www.theguardian.com/technology/2026/jan/15/elon-musk-xai-datacenter-memphis) January 15, 2026.
 
-6. Epoch AI. "Can AI companies become profitable?" January 28th, 2026. https://epoch.ai/gradient-updates/can-ai-companies-become-profitable
+6. Epoch AI. ["Can AI companies become profitable?"](https://epoch.ai/gradient-updates/can-ai-companies-become-profitable) January 28th, 2026.
 
-7. Pat Garofalo. "How to Rein in Big Tech’s Secret Data Center Deals" November, 2025. https://www.economicliberties.us/wp-content/uploads/2025/11/data_center_brief_FINAL.pdf
+7. Pat Garofalo. ["How to Rein in Big Tech's Secret Data Center Deals"](https://www.economicliberties.us/wp-content/uploads/2025/11/data_center_brief_FINAL.pdf) November, 2025.
 
-8. Elizabeth Gabriel. "As data centers boom, Indiana tax breaks could reach nearly $1B" June 9th, 2025. https://mirrorindy.org/southside-data-center-tax-break-franklin-township-government-assistance-amazon-google-microsoft/
+8. Elizabeth Gabriel. ["As data centers boom, Indiana tax breaks could reach nearly $1B"](https://mirrorindy.org/southside-data-center-tax-break-franklin-township-government-assistance-amazon-google-microsoft/) June 9th, 2025.
 
-9. Nick Rommel. "Microsoft pauses construction on parts of Mount Pleasant site again" March 20th, 2025. https://www.wpr.org/news/microsoft-pauses-construction-on-parts-of-mount-pleasant-site-again
+9. Nick Rommel. ["Microsoft pauses construction on parts of Mount Pleasant site again"](https://www.wpr.org/news/microsoft-pauses-construction-on-parts-of-mount-pleasant-site-again) March 20th, 2025.
 
-10. MSN. "OpenAI and Oracle decide not to expand Texas data center site: report", March, 2026. https://www.msn.com/en-us/news/technology/openai-and-oracle-decide-not-to-expand-texas-data-center-site-report/ar-AA1XGHgk
+10. MSN. ["OpenAI and Oracle decide not to expand Texas data center site: report"](https://www.msn.com/en-us/news/technology/openai-and-oracle-decide-not-to-expand-texas-data-center-site-report/ar-AA1XGHgk) March, 2026.
 
-11. Southern Environmental Law Center. "New study finds proposed xAI gas plant could worsen regional air pollution, cause millions of dollars in annual health damages" February 16, 2026. https://www.selc.org/press-release/new-study-finds-proposed-xai-gas-plant-could-worsen-regional-air-pollution-cause-millions-of-dollars-in-annual-health-damages/
+11. Southern Environmental Law Center. ["New study finds proposed xAI gas plant could worsen regional air pollution, cause millions of dollars in annual health damages"](https://www.selc.org/press-release/new-study-finds-proposed-xai-gas-plant-could-worsen-regional-air-pollution-cause-millions-of-dollars-in-annual-health-damages/) February 16, 2026.
