@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:opsz,wght@8..72,300;8..72,400;8..72,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  </head>
+  <body>
+    <div class="site-wrap">
+      <aside class="sidebar">
+        {% include nav.html %}
+      </aside>
+      <main class="content">
+        <header class="site-header">
+          <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+          {% if site.description %}<p class="site-desc">{{ site.description }}</p>{% endif %}
+        </header>
+
+        <article class="post">
+          {{ content }}
+        </article>
+
+        <footer class="site-footer">
+          <p>&copy; {{ site.time | date: '%Y' }} {{ site.author | default: site.title }}</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

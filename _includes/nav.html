@@ -1,0 +1,16 @@
+<nav class="nav">
+  <div class="nav-inner">
+    <img src="{{ '/assets/portrait.jpg' | relative_url }}" alt="{{ site.author }}" class="portrait">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <ul class="nav-list">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      {% for p in site.pages %}
+        {% if p.nav == true %}
+          <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <div class="nav-footer">&copy; {{ site.time | date: '%Y' }}</div>
+  </div>
+</nav>

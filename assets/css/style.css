@@ -1,0 +1,37 @@
+:root{
+  --bg:#ffffff;
+  --muted:#6b7280;
+  --accent:#111827;
+  --max-width:720px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.6;color:var(--accent);background:var(--bg);margin:0}
+
+.site-wrap{display:flex;min-height:100vh}
+.sidebar{width:240px;padding:40px 24px;background:linear-gradient(180deg,#fbfbfb,#fff);border-right:1px solid #f1f1f3}
+.content{flex:1;padding:48px;max-width:var(--max-width);margin:0 auto}
+
+.site-title{font-family:Merriweather,serif;font-weight:700;margin:0;font-size:1.25rem}
+.site-title a{color:var(--accent);text-decoration:none}
+.site-desc{color:var(--muted);margin:8px 0 0;font-size:0.95rem}
+
+.nav{display:flex;flex-direction:column;height:100%}
+.portrait{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:24px;display:block}
+.nav .brand{font-weight:600;margin-bottom:18px;display:block}
+.nav-list{list-style:none;padding:0;margin:0 0 24px}
+.nav-list li{margin:8px 0}
+.nav-list a{color:var(--accent);text-decoration:none;font-weight:500}
+
+.post{padding-top:12px}
+.post h1,.post h2{font-family:Merriweather,serif;color:var(--accent)}
+.post p{color:#111827;margin:0 0 1em}
+.post img{max-width:100%;height:auto}
+
+.site-footer{margin-top:48px;color:var(--muted);font-size:0.9rem}
+
+@media (max-width:800px){
+  .site-wrap{flex-direction:column}
+  .sidebar{width:100%;border-right:none;border-bottom:1px solid #f1f1f3}
+  .content{padding:24px}
+}
