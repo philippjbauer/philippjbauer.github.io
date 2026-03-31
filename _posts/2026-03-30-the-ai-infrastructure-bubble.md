@@ -65,6 +65,10 @@ As developers and business leaders we should care about what powers our tool cha
 
 We may not see an increase in the monthly price we pay right away. But similar to other subscription services – remember how Netflix cut features and raised prices over the years? The possibility of degradation in service like lower quotas, limited access to premium models or longer wait times during peak times are very possible. And eventually the incredible amount of subsidies we enjoy will run out in order for the big tech companies to stop the financial bleed they currently experience.
 
+> Update 03/31/2026
+> Today I found the following article from 03/27/2027 going into this exact scenario:
+> [Techradar – Claude is limiting usage more aggressively during peak hours — here’s what changed](https://www.techradar.com/ai-platforms-assistants/claude/claude-is-limiting-usage-more-aggressively-during-peak-hours-heres-what-changed)
+
 For businesses that rely on on-prem hardware, disruptions in the hardware market can throw regular procurement and new investments into chaos, delay or threaten projects, impact ROI projections and lead to less revenue when as access becomes more and more limited. A single company was able to impact a whole industry at once, basically on speculation alone.
 
 As citizens we should be concerned about the huge subsidies that are funneled into these projects. Federal, state and local government support the AI data center buildout with tax incentives, waiving of permitting requirements and regulations – either outright or by turning a blind eye, zoning and land use changes, public-private partnerships and infrastructure investments.
