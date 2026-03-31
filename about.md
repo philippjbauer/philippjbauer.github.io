@@ -4,13 +4,13 @@ title: Hi – I'm Philipp.
 permalink: /about/
 ---
 
-I write about technology, design, and the ideas that shape how we build things. By day I work on software where practical engineering meets clear thinking; by night I tinker, read, and try to make sense of what comes next.
+I write about AI, technology, engineering, and the ideas that shape how we build things. By day I work on software where practical engineering meets clear thinking; by night I tinker, read, and try to make sense of what comes next.
 
-My approach is pragmatic and human-centered: technical craft matters, but so does context. On this blog you'll find essays, notes from projects, and occasional deep dives – all written for readers who care about good tools and thoughtful tradeoffs.
+My approach is pragmatic and human-centered: technical craft matters, but so does the context we work in. On this blog you'll find essays, notes from projects, and occasional deep dives – all written for readers who care about good tools and thoughtful tradeoffs.
 
-If you want to say hello, find me on the LinkedIn or GitHub. I enjoy conversations about product, systems design, and how technology fits into everyday life.
+If you want to say hello, find me on the [LinkedIn](https://www.linkedin.com/in/philippjbauer) or [GitHub](https://github.com/philippjbauer). I enjoy conversations about product, systems design, and how technology fits into everyday life.
 
-I currently work as a **Sr. Software Architect / Developer** for [CODE Group](https://codegroup.io/), speak at conferences, hold online seminars and occasionally write for our print publication, CODE Magazine.
+I currently work as a **Sr. Software Architect / Developer** for [CODE Group](https://codegroup.io), speak at conferences, hold online seminars and occasionally write for our print publication, CODE Magazine.
 
 ## Some of my past work includes:
 

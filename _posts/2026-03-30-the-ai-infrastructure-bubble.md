@@ -1,5 +1,5 @@
 ---
-title: "The AI Infrastructure Bubble: What Actually Gets Built"
+title: "The AI Infrastructure Bubble – What Actually Gets Built"
 date: 2026-03-30
 permalink: /the-ai-infrastructure-bubble/
 categories: AI, infrastructure, data centers, power, economics
