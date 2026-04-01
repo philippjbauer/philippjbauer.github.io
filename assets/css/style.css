@@ -196,17 +196,131 @@ body {
   .post pre { background: #1e2330; border-color: var(--border) }
 }
 
+/* ── Mobile top bar (hidden on desktop) ───────────────────── */
+.mobile-header {
+  display: none;
+}
+
+/* ── Nav close button (hidden on desktop) ─────────────────── */
+.nav-close {
+  display: none;
+}
+
+/* ── Overlay (hidden on desktop) ─────────────────────────── */
+.nav-overlay {
+  display: none;
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 800px) {
+  /* Top bar */
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    padding: 0 16px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    z-index: 200;
+  }
+
+  .mobile-site-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  /* Hamburger button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+  }
+  .hamburger span {
+    display: block;
+    height: 2px;
+    width: 22px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .hamburger:hover span { background: var(--accent) }
+
+  /* Dim overlay */
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 299;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  .nav-overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Sidebar drawer */
   .site-wrap { flex-direction: column }
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: static;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    max-width: 85vw;
+    height: 100vh;
+    z-index: 300;
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+    padding: 16px 20px 20px;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    overflow-y: auto;
   }
-  .nav-post-list { display: none }
-  .content { padding: 24px 20px }
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  /* Close button */
+  .nav-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 4px 6px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    transition: color 0.15s;
+  }
+  .nav-close:hover { color: var(--text) }
+
+  /* Push content down below top bar */
+  .content {
+    padding: 24px 20px;
+    padding-top: calc(52px + 24px);
+  }
+
+  /* Show recent posts in the mobile drawer */
+  .nav-post-list { display: block }
 }

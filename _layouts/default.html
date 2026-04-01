@@ -12,13 +12,44 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   </head>
   <body>
+    <header class="mobile-header">
+      <span class="mobile-site-title">{{ site.title }}</span>
+      <button class="hamburger" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
     <div class="site-wrap">
-      <aside class="sidebar">
+      <aside class="sidebar" id="sidebar">
+        <button class="nav-close" id="nav-close" aria-label="Close navigation">&times;</button>
         {% include nav.html %}
       </aside>
       <main class="content">
       {{ content }}
       </main>
     </div>
+    <script>
+      (function() {
+        var toggle = document.getElementById('nav-toggle');
+        var close  = document.getElementById('nav-close');
+        var sidebar = document.getElementById('sidebar');
+        var overlay = document.getElementById('nav-overlay');
+        function openNav() {
+          sidebar.classList.add('is-open');
+          overlay.classList.add('is-visible');
+          toggle.setAttribute('aria-expanded', 'true');
+          overlay.setAttribute('aria-hidden', 'false');
+        }
+        function closeNav() {
+          sidebar.classList.remove('is-open');
+          overlay.classList.remove('is-visible');
+          toggle.setAttribute('aria-expanded', 'false');
+          overlay.setAttribute('aria-hidden', 'true');
+        }
+        toggle.addEventListener('click', openNav);
+        close.addEventListener('click', closeNav);
+        overlay.addEventListener('click', closeNav);
+      })();
+    </script>
   </body>
 </html>
