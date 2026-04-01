@@ -23,13 +23,15 @@ description: Articles and insights on AI, infrastructure, and software engineeri
 author: Philipp Bauer
 email: hello@philippbauer.org
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://blog.philippbauer.org" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  philippjbauer
 
 # Build settings
 # theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.
