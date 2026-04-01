@@ -30,8 +30,8 @@
     </div>
     <script>
       (function() {
-        var toggle = document.getElementById('nav-toggle');
-        var close  = document.getElementById('nav-close');
+        var toggle  = document.getElementById('nav-toggle');
+        var closeBtn = document.getElementById('nav-close');
         var sidebar = document.getElementById('sidebar');
         var overlay = document.getElementById('nav-overlay');
         function openNav() {
@@ -47,7 +47,7 @@
           overlay.setAttribute('aria-hidden', 'true');
         }
         toggle.addEventListener('click', openNav);
-        close.addEventListener('click', closeNav);
+        closeBtn.addEventListener('click', closeNav);
         overlay.addEventListener('click', closeNav);
       })();
     </script>
