@@ -1,7 +1,7 @@
 ---
 title: "PrismLM's Bonsai 1bit LLM – The Holy Grail of Local Inference"
 date: 2026-04-02
-permalink: /prismlm-bonsai-1bi-llm/
+permalink: /prismlm-bonsai-1bit-llm/
 description: "PrismLM's new Bonsai 1-bit LLMs are a game-changer for local inference, offering significant performance with drastically reduced model size. Learn about the implications and my thoughts on this breakthrough."
 categories:
   - AI
