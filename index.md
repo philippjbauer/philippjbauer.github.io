@@ -8,6 +8,7 @@ title: Home
   {% assign latest = site.posts | first %}
   <span class="post-meta">{{ latest.date | date: "%B %d, %Y" }}</span>
   <h1>{{ latest.title }}</h1>
+  {% include post-hero.html image=latest.image image_alt=latest.image_alt %}
   {{ latest.content }}
   <p><a class="read-more" href="{{ latest.url | relative_url }}">Permalink &rarr;</a></p>
 </article>

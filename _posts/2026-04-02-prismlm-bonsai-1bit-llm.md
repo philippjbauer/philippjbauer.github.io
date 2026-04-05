@@ -9,14 +9,9 @@ categories:
   - LLM
   - 1-bit LLMs
 layout: posts
-image: ./assets/posts/prismlm-bonsai-1bit-llm.jpg
+image: /assets/posts/prismlm-bonsai-1bit-llm.jpg
 image_alt: "Bonsai 1-bit LLM illustration"
 ---
-
-<div class="post-hero">
-  <img src="/assets/posts/prismlm-bonsai-1bit-llm.jpg" alt="Bonsai 1-bit LLM illustration" class="hero-image" />
-</div>
-
 In 2024 I released an article in CODE Magazine about local LLMs titled ["You’re Missing Out on Open-Source LLMs!""](https://codemag.com/Article/2403041/You%E2%80%99re-Missing-Out-on-Open-Source-LLMs!). In presentations I gave at the time I pointed to the research Microsoft did on the BitNet architecture ([Arxiv Paper](https://arxiv.org/abs/2410.16144)) as an example of where developments in the space are headed. The prospect of language models that only require a fraction of the size per weight as other architecture was tantalizing! But we were far from models that could be used in production.
 
 **That has changed now!**

@@ -124,6 +124,29 @@ body {
 /* ── Article ──────────────────────────────────────────────── */
 .post { padding-top: 8px }
 
+/* Hero / featured image inside posts */
+.post-hero {
+  width: 100%;
+  margin: 0 0 1.25em;
+  border-radius: 6px;
+  background: #fff8bb;
+  border: 1px solid #ddd;
+}
+
+.post-hero .image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.post-hero .disclaimer {
+  font-size: 0.75rem;
+  color: var(--muted);
+  padding: 0.5em 0.75em;
+}
+
 .post h1 {
   font-family: Merriweather, serif;
   font-size: 1.875rem;
@@ -179,16 +202,6 @@ body {
 
 .post img { max-width: 100%; height: auto; border-radius: 4px }
 
-/* Hero / featured image inside posts */
-.post .hero-image {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 0 1.25em;
-  border-radius: 6px;
-  object-fit: cover;
-}
 .post hr { border: none; border-top: 1px solid var(--border); margin: 2em 0 }
 
 /* ── Dark mode ────────────────────────────────────────────── */
