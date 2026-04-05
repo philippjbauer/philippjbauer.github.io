@@ -37,4 +37,6 @@ If you're not excited at this announcement you might not quite understand the ra
 
 I am eager to try these new models myself. The PrismLM team released their own tooling to run the models. But projects like llama.cpp are usually fast to respond to new models. I'll be testing this model in my own workflows as soon as I can. In the meantime, I'll refer to benchmarks by GitHub user ArmanJR who shared them in his repo here: [Bonsai vs Qwen3.5, on Edge](https://github.com/ArmanJR/PrismML-Bonsai-vs-Qwen3.5-Benchmark)
 
-If these new models scale to larger parameter counts – and by doing so make up for the loss in performance – we will see a new chapter for language models. So, kudos to the PrismLM team.
+If these new models scale to larger parameter counts – and by doing so make up for the loss in performance – we will see a new chapter for language models. Enabling consumers to run models without expensive hardware and democratizing access to AI.
+
+Kudos to the PrismLM team for achieving what seemed impossible just a few years ago.
