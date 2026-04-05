@@ -31,8 +31,8 @@
       <ul class="nav-list">
         {% for p in site.posts %}
         <li>
-          <a href="{{ p.url | relative_url }}"{% if page.url == p.url %} class="active"{% endif %}>{{ p.title }}</a>
           <span class="nav-post-date">{{ p.date | date: "%b %d, %Y" }}</span>
+          <a href="{{ p.url | relative_url }}"{% if page.url == p.url %} class="active"{% endif %}>{{ p.title }}</a>
         </li>
         {% endfor %}
       </ul>
