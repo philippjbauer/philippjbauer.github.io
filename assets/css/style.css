@@ -173,6 +173,17 @@ body {
 .post pre code { background: none; border: none; padding: 0; font-size: 0.875rem }
 
 .post img { max-width: 100%; height: auto; border-radius: 4px }
+
+/* Hero / featured image inside posts */
+.post .hero-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0 1.25em;
+  border-radius: 6px;
+  object-fit: cover;
+}
 .post hr { border: none; border-top: 1px solid var(--border); margin: 2em 0 }
 
 /* ── Dark mode ────────────────────────────────────────────── */

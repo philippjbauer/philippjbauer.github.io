@@ -6,6 +6,14 @@
     <meta name="theme-color" content="#ffffff">
     <title>{% if page.url == '/' %}{{ site.title }}{% else %}{{ page.title }} – {{ site.title }}{% endif %}</title>
     {% seo title=false %}
+    {% assign meta_image = page.image | default: site.image %}
+    {% if meta_image %}
+      <meta property="og:image" content="{{ site.url }}{{ meta_image | relative_url }}">
+      <meta property="og:image:alt" content="{{ page.image_alt | default: page.title }}">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="{{ site.url }}{{ meta_image | relative_url }}">
+      <meta name="twitter:image:alt" content="{{ page.image_alt | default: page.title }}">
+    {% endif %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:opsz,wght@8..72,300;8..72,400;8..72,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">

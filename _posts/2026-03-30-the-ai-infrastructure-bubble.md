@@ -10,7 +10,14 @@ categories:
   - power
   - economics
 layout: posts
+image: ./assets/posts/the-ai-infrastructure-bubble.jpg
+image_alt: "AI Infrastructure Bubble illustration"
 ---
+
+<div class="post-hero">
+  <img src="/assets/posts/the-ai-infrastructure-bubble.jpg" alt="AI Infrastructure Bubble illustration" class="hero-image" />
+</div>
+
 We all have heard the news stories about the build out of hyperscale data centers. I've been following this story for a while now and believed the industry figures that were put out there. Claims of massive investments and stories of concrete not drying fast enough. 
 
 Today I caught a conversation with Ed Zitron – host of the [Better Offline](https://www.betteroffline.com/) podcast – on "The Tech Report" YouTube channel where he pulled back the curtain on what's really happening with data center and power generation construction. The numbers he shared don't match the headlines.
