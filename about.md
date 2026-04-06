@@ -4,8 +4,6 @@ title: Hi – I'm Philipp.
 permalink: /about/
 ---
 
-I write about AI, technology, engineering, and the ideas that shape how we build things. By day I work on software where practical engineering meets clear thinking; by night I tinker, read, and try to make sense of what comes next.
-
 A millennial who got to see technology evolve from 233MHz CPUs and MBs of RAM to 32-core 5GHz CPU/GPU chips with 100+ GBs of RAM. From Win 95 to macOS 26. Diablo 1 to Baldur's Gate 3. Who cut his teeth on the early internet and CSS hacks for Internet Explorer 5. Proud student of an old Linux-head CS teacher who had his students build the fastest line-following robot they could come up with. Also, Linux-head (vampire rules apply?). 
 
 Polymath and buccaneer scholar. Was almost convinced to become a teacher after graduating. Conference speaker. Listener. Someone who'd enroll in astrophysics courses if money wasn't an issue. Never experienced a boring day in his life. 
@@ -13,6 +11,8 @@ Polymath and buccaneer scholar. Was almost convinced to become a teacher after g
 Bratwurst and Mettigel. Jever, but American craft is decent too. Home in the beautiful Ozark mountains. 
 
 Worked with too many technologies to list here. Vim and VS Code.
+
+I write about AI, technology, engineering, and the ideas that shape how we build things. By day I work on software where practical engineering meets clear thinking; by night I tinker, read, and try to make sense of what comes next.
 
 If you want to say hello, find me on the [LinkedIn](https://www.linkedin.com/in/philippjbauer) or [GitHub](https://github.com/philippjbauer). I enjoy conversations about product, systems design, and how technology fits into everyday life.
 
