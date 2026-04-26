@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coding Benchmarks Comparison</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #FAFAF8;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 960px;
+    width: 100%;
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 50px;
+    max-width: 840px;
+    padding-top: 30px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 62px;
+    left: 30px;
+    right: 30px;
+    height: 2.5px;
+    background: #E0DDD5;
+    border-radius: 2px;
+  }
+
+  .timeline-point {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+  }
+
+  .timeline-dot.anthropic { background: #D4AF7A; }
+  .timeline-dot.qwen { background: #9B72CF; }
+
+  .timeline-label {
+    font-size: 13px;
+    color: #8B8278;
+    white-space: nowrap;
+  }
+
+  /* Cards row */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 860px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 500px) {
+    .cards { grid-template-columns: 1fr; }
+  }
+
+  /* Card */
+  .card {
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+  }
+
+  .card.anthropic {
+    background: linear-gradient(135deg, #FDFBF7 0%, #F5F0E8 100%);
+    border: 2px solid #D4AF7A;
+  }
+  .card.anthropic::before { background: #D4AF7A; }
+
+  .card.qwen {
+    background: linear-gradient(135deg, #F5F0FF 0%, #EDE5FF 100%);
+    border: 2px solid #9B72CF;
+  }
+  .card.qwen::before { background: #9B72CF; }
+
+  .card-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  .card.anthropic .card-name { color: #5C5347; }
+  .card.qwen .card-name { color: #4A3570; }
+
+  .card-meta {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .card.anthropic .card-meta { color: #8B8278; }
+  .card.qwen .card-meta { color: #7B6BA0; }
+
+  /* Benchmark row */
+  .bench-row {
+    margin-bottom: 14px;
+  }
+
+  .bench-label {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+  .card.anthropic .bench-label { color: #6B6258; }
+  .card.qwen .bench-label { color: #6B5E8F; }
+
+  .bar-track {
+    width: 100%;
+    height: 12px;
+    border-radius: 6px;
+    margin-bottom: 3px;
+  }
+
+  .card.anthropic .bar-track { background: #EDEAE3; }
+  .card.qwen .bar-track { background: #F0EBFA; }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+  }
+
+  .card.anthropic .bar-fill { background: linear-gradient(90deg, #D4AF7A 0%, #C19A6B 100%); opacity: 0.85; }
+  .card.qwen .bar-fill { background: linear-gradient(90deg, #9B72CF 0%, #8B62BF 100%); opacity: 0.85; }
+
+  .bench-score {
+    text-align: right;
+    font-size: 10.5px;
+    font-weight: 500;
+  }
+
+  .card.anthropic .bench-score { color: #5C5347; }
+  .card.qwen .bench-score { color: #4A3570; }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    margin: 16px 0;
+  }
+
+  .card.anthropic .divider { background: #E5DFD5; }
+  .card.qwen .divider { background: #E8E0F5; }
+
+  /* Quick stats */
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  .stat-group { text-align: center; }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .card.anthropic .stat-label { color: #8B8278; }
+  .card.qwen .stat-label { color: #7B6BA0; }
+
+  .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .card.anthropic .stat-value { color: #5C5347; }
+  .card.qwen .stat-value { color: #4A3570; }
+
+  .stat-pos {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .card.anthropic .stat-pos { color: #D4AF7A; }
+  .card.qwen .stat-pos { color: #9B72CF; }
+
+  /* Connection lines */
+  .conn-line {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.5px;
+    height: 18px;
+    border-left: 1.5px dashed;
+  }
+
+  .card.anthropic .conn-line { border-color: #D4AF7A; }
+  .card.qwen .conn-line { border-color: #9B72CF; }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #E8E5DD;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #5C5347;
+  }
+
+  .legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+  }
+
+  .legend-swatch.anthropic { background: #D4AF7A; }
+  .legend-swatch.qwen { background: #9B72CF; }
+
+  .legend-source {
+    font-size: 10px;
+    color: #999;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Timeline -->
+  <div class="timeline">
+    <div class="timeline-point">
+      <div class="timeline-dot anthropic"></div>
+      <span class="timeline-label">Sept 2025</span>
+    </div>
+    <div class="timeline-point">
+      <div class="timeline-dot anthropic"></div>
+      <span class="timeline-label">Nov 2025</span>
+    </div>
+    <div class="timeline-point">
+      <div class="timeline-dot qwen"></div>
+      <span class="timeline-label">Feb 2026</span>
+    </div>
+    <div class="timeline-point">
+      <div class="timeline-dot qwen"></div>
+      <span class="timeline-label">April 2026</span>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="cards">
+
+    <!-- Claude Sonnet 4.5 -->
+    <div class="card anthropic">
+      <div class="card-name">Claude Sonnet 4.5</div>
+      <div class="card-meta">Anthropic · 200K ctx</div>
+
+      <div class="bench-row">
+        <div class="bench-label">SWE-bench Verified</div>
+        <div class="bar-track"><div class="bar-fill" style="width:77.2%"></div></div>
+        <div class="bench-score">77.2%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-label">LiveCodeBench v6</div>
+        <div class="bar-track"><div class="bar-fill" style="width:71.4%"></div></div>
+        <div class="bench-score">71.4%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-label">Terminal-Bench 2.0</div>
+        <div class="bar-track"><div class="bar-fill" style="width:48.0%"></div></div>
+        <div class="bench-score">48.0%</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="stats">
+        <div class="stat-group">
+          <div class="stat-label">Avg Score</div>
+          <div class="stat-value">65.5%</div>
+        </div>
+        <div class="stat-group">
+          <div class="stat-label">Position</div>
+          <div class="stat-pos">#3</div>
+        </div>
+      </div>
+
+      <div class="conn-line"></div>
+    </div>
+
+    <!-- Claude Opus 4.5 -->
+    <div class="card anthropic">
+      <div class="card-name">Claude Opus 4.5</div>
+      <div class="card-meta">Anthropic · 200K ctx</div>
+
+      <div class="bench-row">
+        <div class="bench-label">SWE-bench Verified</div>
+        <div class="bar-track"><div class="bar-fill" style="width:80.9%"></div></div>
+        <div class="bench-score">80.9%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-label">LiveCodeBench v6</div>
+        <div class="bar-track"><div class="bar-fill" style="width:87.1%"></div></div>
+        <div class="bench-score">87.1%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-label">Terminal-Bench 2.0</div>
+        <div class="bar-track"><div class="bar-fill" style="width:59.3%"></div></div>
+        <div class="bench-score">59.3%</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="stats">
+        <div class="stat-group">
+          <div class="stat-label">Avg Score</div>
+          <div class="stat-value">75.8%</div>
+        </div>
+        <div class="stat-group">
+          <div class="stat-label">Position</div>
+          <div class="stat-pos">#1</div>
+        </div>
+      </div>
+
+      <div class="conn-line"></div>
+    </div>
+
+    <!-- Qwen 3.5 397B -->
+    <div class="card qwen">
+      <div class="card-name">Qwen 3.5 397B</div>
+      <div class="card-meta">Alibaba · MoE 17B active</div>
+
+      <div class="bench-row">
+        <div class="bench-label">SWE-bench Verified</div>
+        <div class="bar-track"><div class="bar-fill" style="width:76.4%"></div></div>
+        <div class="bench-score">76.4%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-label">LiveCodeBench v6</div>
+        <div class="bar-track"><div class="bar-fill" style="width:83.6%"></div></div>
+        <div class="bench-score">83.6%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-label">Terminal-Bench 2.0</div>
+        <div class="bar-track"><div class="bar-fill" style="width:52.5%"></div></div>
+        <div class="bench-score">52.5%</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="stats">
+        <div class="stat-group">
+          <div class="stat-label">Avg Score</div>
+          <div class="stat-value">70.8%</div>
+        </div>
+        <div class="stat-group">
+          <div class="stat-label">Position</div>
+          <div class="stat-pos">#2</div>
+        </div>
+      </div>
+
+      <div class="conn-line"></div>
+    </div>
+
+    <!-- Qwen 3.6 35B -->
+    <div class="card qwen">
+      <div class="card-name">Qwen 3.6 35B</div>
+      <div class="card-meta">Alibaba · MoE 3B active</div>
+
+      <div class="bench-row">
+        <div class="bench-label">SWE-bench Verified</div>
+        <div class="bar-track"><div class="bar-fill" style="width:73.4%"></div></div>
+        <div class="bench-score">73.4%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-label">LiveCodeBench v6</div>
+        <div class="bar-track"><div class="bar-fill" style="width:80.4%"></div></div>
+        <div class="bench-score">80.4%</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="bench-label">Terminal-Bench 2.0</div>
+        <div class="bar-track"><div class="bar-fill" style="width:51.5%"></div></div>
+        <div class="bench-score">51.5%</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="stats">
+        <div class="stat-group">
+          <div class="stat-label">Avg Score</div>
+          <div class="stat-value">68.4%</div>
+        </div>
+        <div class="stat-group">
+          <div class="stat-label">Position</div>
+          <div class="stat-pos">#4</div>
+        </div>
+      </div>
+
+      <div class="conn-line"></div>
+    </div>
+
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-swatch anthropic"></div>
+      Anthropic Models
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch qwen"></div>
+      Qwen Models
+    </div>
+    <span class="legend-source">Source: BenchLM, HuggingFace, llm-stats.com · 2026</span>
+  </div>
+
+</div>
+
+</body>
+</html>
