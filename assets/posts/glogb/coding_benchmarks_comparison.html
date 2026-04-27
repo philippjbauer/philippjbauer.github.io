@@ -12,7 +12,7 @@
     background: #FAFAF8;
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 40px 20px 60px;
   }
 
   .container {
@@ -20,57 +20,11 @@
     width: 100%;
   }
 
-  /* Timeline */
-  .timeline {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto 50px;
-    max-width: 840px;
-    padding-top: 30px;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    top: 62px;
-    left: 30px;
-    right: 30px;
-    height: 2.5px;
-    background: #E0DDD5;
-    border-radius: 2px;
-  }
-
-  .timeline-point {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .timeline-dot {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    margin-bottom: 12px;
-  }
-
-  .timeline-dot.anthropic { background: #D4AF7A; }
-  .timeline-dot.qwen { background: #9B72CF; }
-
-  .timeline-label {
-    font-size: 13px;
-    color: #8B8278;
-    white-space: nowrap;
-  }
-
   /* Cards row */
   .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    margin-bottom: 30px;
   }
 
   @media (max-width: 860px) {
@@ -209,27 +163,62 @@
   .card.anthropic .stat-pos { color: #D4AF7A; }
   .card.qwen .stat-pos { color: #9B72CF; }
 
-  /* Connection lines */
-  .conn-line {
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1.5px;
-    height: 18px;
-    border-left: 1.5px dashed;
+  /* Timeline section below cards — mirrors the 4-column card grid for alignment */
+  .timeline-section {
+    margin: 50px auto 0;
+    max-width: 960px;
+    position: relative;
   }
 
-  .card.anthropic .conn-line { border-color: #D4AF7A; }
-  .card.qwen .conn-line { border-color: #9B72CF; }
+  .timeline-line {
+    position: absolute;
+    top: 50px;
+    /* Span from center of first grid cell to center of last */
+    left: calc((100% - 48px) / 8);
+    right: calc((100% - 48px) / 8);
+    height: 2.5px;
+    background: #E0DDD5;
+    border-radius: 2px;
+  }
+
+  .timeline-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    position: relative;
+  }
+
+  .timeline-point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-dot.anthropic { background: #D4AF7A; }
+  .timeline-dot.qwen { background: #9B72CF; }
+
+  .timeline-label {
+    font-size: 13px;
+    color: #8B8278;
+    white-space: nowrap;
+  }
 
   /* Legend */
   .legend {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 840px;
-    margin: 0 auto;
+    max-width: 960px;
+    margin: 24px auto 0;
     padding: 16px 24px;
     background: #fff;
     border-radius: 12px;
@@ -263,30 +252,10 @@
 
 <div class="container">
 
-  <!-- Timeline -->
-  <div class="timeline">
-    <div class="timeline-point">
-      <div class="timeline-dot anthropic"></div>
-      <span class="timeline-label">Sept 2025</span>
-    </div>
-    <div class="timeline-point">
-      <div class="timeline-dot anthropic"></div>
-      <span class="timeline-label">Nov 2025</span>
-    </div>
-    <div class="timeline-point">
-      <div class="timeline-dot qwen"></div>
-      <span class="timeline-label">Feb 2026</span>
-    </div>
-    <div class="timeline-point">
-      <div class="timeline-dot qwen"></div>
-      <span class="timeline-label">April 2026</span>
-    </div>
-  </div>
-
   <!-- Cards -->
   <div class="cards">
 
-    <!-- Claude Sonnet 4.5 -->
+    <!-- Claude Sonnet 4.5 (Sept 2025, avg 65.5% → #4) -->
     <div class="card anthropic">
       <div class="card-name">Claude Sonnet 4.5</div>
       <div class="card-meta">Anthropic · 200K ctx</div>
@@ -318,14 +287,12 @@
         </div>
         <div class="stat-group">
           <div class="stat-label">Position</div>
-          <div class="stat-pos">#3</div>
+          <div class="stat-pos">#4</div>
         </div>
       </div>
-
-      <div class="conn-line"></div>
     </div>
 
-    <!-- Claude Opus 4.5 -->
+    <!-- Claude Opus 4.5 (Nov 2025, avg 75.8% → #1) -->
     <div class="card anthropic">
       <div class="card-name">Claude Opus 4.5</div>
       <div class="card-meta">Anthropic · 200K ctx</div>
@@ -360,11 +327,9 @@
           <div class="stat-pos">#1</div>
         </div>
       </div>
-
-      <div class="conn-line"></div>
     </div>
 
-    <!-- Qwen 3.5 397B -->
+    <!-- Qwen 3.5 397B (Feb 2026, avg 70.8% → #2) -->
     <div class="card qwen">
       <div class="card-name">Qwen 3.5 397B</div>
       <div class="card-meta">Alibaba · MoE 17B active</div>
@@ -399,11 +364,9 @@
           <div class="stat-pos">#2</div>
         </div>
       </div>
-
-      <div class="conn-line"></div>
     </div>
 
-    <!-- Qwen 3.6 35B -->
+    <!-- Qwen 3.6 35B (April 2026, avg 68.4% → #3) -->
     <div class="card qwen">
       <div class="card-name">Qwen 3.6 35B</div>
       <div class="card-meta">Alibaba · MoE 3B active</div>
@@ -435,13 +398,34 @@
         </div>
         <div class="stat-group">
           <div class="stat-label">Position</div>
-          <div class="stat-pos">#4</div>
+          <div class="stat-pos">#3</div>
         </div>
       </div>
-
-      <div class="conn-line"></div>
     </div>
 
+  </div>
+
+  <!-- Timeline below cards -->
+  <div class="timeline-section">
+    <div class="timeline-line"></div>
+    <div class="timeline-row">
+      <div class="timeline-point">
+        <div class="timeline-dot anthropic"></div>
+        <span class="timeline-label">Sept 2025</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot anthropic"></div>
+        <span class="timeline-label">Nov 2025</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot qwen"></div>
+        <span class="timeline-label">Feb 2026</span>
+      </div>
+      <div class="timeline-point">
+        <div class="timeline-dot qwen"></div>
+        <span class="timeline-label">April 2026</span>
+      </div>
+    </div>
   </div>
 
   <!-- Legend -->
