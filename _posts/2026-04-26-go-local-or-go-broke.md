@@ -216,6 +216,98 @@ This is a clean slate setup. No opinionated configurations or tools added. A sta
 
 #### Download the [Open WebUI stack on GitHub](https://github.com/philippjbauer)
 
+### Quickstart
+
+The repository includes a bash setup script that guides you through the creation of environment files. It creates configuration files for SearXNG, pgvector and an envrionment file for the stack. It's recommended to run this script on the Docker host machine. Otherwise you'll have to copy the resulting files incl. the compose file manually to the Docker host.
+
+The compose file is too long to show in full here. But the example `.env` file can give you an idea of what you'll need to configure the stack:
+
+```env
+# ─── Open WebUI Core ────────────────────────────────────────────────────────
+# Secret key for session management. Generate with: openssl rand -hex 32
+WEBUI_SECRET_KEY=your-secret-key-here-32-characters
+
+# ─── Network / Port Configuration ───────────────────────────────────────────
+# Port Open WebUI exposes on the host (mapped to container port 8080)
+OPENWEBUI_PORT=4040
+
+# Port SearXNG exposes on the host (mapped to container port 8080)
+SEARXNG_PORT=4041
+
+# Port Playwright Server exposes on the host (mapped to container port 8931)
+PLAYWRIGHT_SERVER_PORT=4042
+
+# Port Playwright MCP exposes on the host (mapped to container port 8932)
+PLAYWRIGHT_MCP_PORT=4043
+
+# Port Open Terminal exposes on the host (mapped to container port 8933)
+OPEN_TERMINAL_PORT=4044
+
+# ─── SearXNG Configuration ──────────────────────────────────────────────────
+# Base URL for SearXNG (must match your network topology)
+SEARXNG_BASE_URL=http://ip-or-domain-of-your-docker-host:4041/
+
+# ─── WireGuard VPN ─────────────────────────────────────────────────────────
+# VPN credentials (provided by your VPN provider)
+WIREGUARD_PRIVATE_KEY=your-wireguard-private-key
+WIREGUARD_ADDRESSES=10.8.0.2/32
+VPN_ENDPOINT_IP=vpn.your-provider.com
+VPN_ENDPOINT_PORT=51820
+WIREGUARD_PUBLIC_KEY=your-wireguard-public-key
+WIREGUARD_PRESHARED_KEY=your-preshared-key
+
+# DNS servers inside VPN tunnel
+DNS_SERVERS=1.1.1.1,1.0.0.1
+
+# ─── pgvector / PostgreSQL ─────────────────────────────────────────────────
+# Database credentials
+PGVECTOR_DB=openwebui
+PGVECTOR_USER=openwebui
+PGVECTOR_PASSWORD=your-pgvector-password-here
+
+# ─── Open WebUI Data Paths ─────────────────────────────────────────────────
+# Local paths for persistent data storage
+OPEN_WEBUI_DATA_PATH=open-webui-data
+PGVECTOR_DATA_PATH=pgvector-data
+PGVECTOR_CONFIG_DIR=pgvector
+SEARXNG_CONFIG_DIR=searxng
+PLAYWRIGHT_MCP_DATA_PATH=playwright-mcp-data
+
+# ─── External Service Endpoints ─────────────────────────────────────────────
+# WebSocket endpoint for Playwright server (used by Open WebUI for web loading)
+PLAYWRIGHT_WS_ENDPOINT=ws://ip-or-domain-of-your-docker-host:4042
+
+# Tika server URL (used by Open WebUI for content extraction)
+TIKA_SERVER_URL=http://tika:9998
+
+# ─── Open Terminal ─────────────────────────────────────────────────────────
+# API key for Open Terminal service
+OPEN_TERMINAL_API_KEY=your-open-terminal-api-key
+
+# ─── Optional: RAG Tuning ──────────────────────────────────────────────────
+# Chunk size target for document processing (words)
+# CHUNK_MIN_SIZE_TARGET=1000
+
+# ─── Optional: Database Pool Sizing ────────────────────────────────────────
+# Adjust if you experience QueuePool limit reached errors
+# DATABASE_POOL_SIZE=10
+# DATABASE_POOL_MAX_OVERFLOW=10
+
+# ─── Backup Configuration ──────────────────────────────────────────────────
+# Local path for backup archive destination
+BACKUP_LOCAL_PATH=./backups
+
+# Encryption (optional but recommended)
+BACKUP_ENCRYPTION_METHOD=gpg
+BACKUP_ENCRYPTION_PASSPHRASE=your-encryption-passphrase
+
+# SSH/SCP remote backup (disabled by default - uncomment and configure as needed)
+# BACKUP_SCP_HOST=your-backup-server
+# BACKUP_SCP_USER=backup-user
+# BACKUP_SCP_PATH=/home/backup-user/docker-backups
+# SSH_IDENTITY_FILE=./ssh.key
+```
+
 ## Running LLMs on GPU enabled Docker hosts
 
 Let's assume you have an AMD Strix Halo machine set up and the GPU configured to be usable by Docker. The following demonstrates a tested configuration to run the aforementioned Qwen3.6 35B A3B model on this machine.
