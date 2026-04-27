@@ -53,7 +53,7 @@ Now imagine if OpenAI is not able to create a return for investors that look to 
 
 **Who'll end up owning you?**
 
-> ![Bilbo OpenAI looking at your most private data, thinking "Why Not?"](../assets/posts/glogb/bilibo-openai-data.jpg)
+> ![Bilbo OpenAI looking at your most private data, thinking "Why Not?"](../assets/posts/glogb/bilibo-openai-data.jpg)\
 >  Why not? — Bilbo Baggins
 
 ## “No thank you, Sam.”
@@ -76,7 +76,7 @@ Replacing its very capable predecessor, Qwen3.6 has been released just a short w
 
 And Qwen3.6's performance goes up with dense 27B parameter sibling.
 
-> ![Qwen3.6 Benchmarks](../assets/posts/glogb/qwen3_6-benchmarks-condensed.jpg)
+> ![Qwen3.6 Benchmarks](../assets/posts/glogb/qwen3_6-benchmarks-condensed.jpg)\
 > – Source: Alibaba / Qwen
 
 ### Open WebUI – an alternative to Chat GPT
@@ -103,11 +103,9 @@ You can regain control with instructions that you control and understand, an age
 
 [[This is where tools like Pi ............]]
 
-## Great, now what?
+## Clash of Capabilities – The Moat is a Lie …
 
-The above mentioned changes are the driver that enable you to gain independence before you get in too deep.
-
-That $2,000 you'll burn through in API pricing is exactly the kind of money you need to show Big AI that you'd rather have control over your tools. No suprise changes in system messages. No dumbing down of tools during "peak hours" – that are conveniently your core business hours.
+You have an escape hatch without too much hurt today. What does the future look like?
 
 In the Dec. 2024 paper "Densing Law of LLMs" by Chaojun Xiao et al., the authors describe that the **capability density** of open-source base LLMs doubles approximately **every 3.5 months**. This is due to the advancements in model architecture, better training techniques and data quality.
 
@@ -115,39 +113,59 @@ See the following example of a few select coding benchmarks across three generat
 
 <iframe src="../assets/posts/glogb/coding_benchmarks_comparison.html" width="100%" height="620" title="Coding benchmarks comparison" style="border: none; margin-bottom: 1rem;"></iframe>
 
-A $2,000 hardware investment sounds reasonable, quickly, when Claude Sonnet 4.5 costs `$3/Mtok in` / `$15Mtok out` [on OpenRouter](https://openrouter.ai/anthropic/claude-sonnet-4.5).
+### … owning nothing and being happy is too.
 
-Let's do some back-of-the-napkin math:
+If you need a simple argument that a ~$2,000 hardware investment beats continued API pricing:
 
-> `2,000 $ / 15 $/Mtok = 133.3 Mtok`
+Look at Claude Sonnet 4.5 API costs [on OpenRouter](https://openrouter.ai/anthropic/claude-sonnet-4.5): `$3/Mtok in` / `$15Mtok out` (in April '26)
 
-But you have more input than output, you have caching … let's say:
+> ![Claude Sonnet 4.5 Pricing on OpenRouter](../assets/posts/glogb/claude-sonnet-4_5-pricing.png)
 
-> `130,000,000 tok / (40 tok/s * 60s * 60m * 24h) = 37.62 days`
+Get the napkin, let's do some math:
 
-You can tell your spouse that the computer will have **paid for itself in 37.6 days**!
+> Ratio of input / output tokens: 8:1\
+> Mixed price: `$3 + $15/8 = $4.90`\
+> ~ $5.00 to make things easier:\
+> `2,000 $ / 5 $/Mtok = 400 Mtok`
 
-> If you have chicken, now is the time to argue for upgrades over this baseline. Solar-panels and batteries for a ~200W computer aren't that expensive!
+But you have more input than output, you have caching all at different pricing.
 
-## Checklist
+Let's handwave a little bit:
 
-There are a few things that you will need before you get started. Let's have a look at them. First and foremost let's tackel the question of what GPU and how much memory do you need?
+> Qwen3.6 35B A3B: ~600 tok/s processing, ~40 tok/s generation (approx., acknowledges long context)\
+> Mixed throughput: `600 tok/s / 8 + 40 tok/s = 115 tok/s`\
+> `400,000,000 tok / (115 tok/s * 60s * 60m * 24h) = **40.25 days**`
 
-> You don't need to run your own LLMs right away. There is a middle ground. You can use services like OpenRouter, or host a GPU in the cloud to see how these models fit into your workflow. But we strive for independence here.
+If you paid for API prices a single machine **paid for itself just over a month!\***
 
-### 96G VRAM, are you mad?
+You'll have control over your tools. No suprise changes in system messages. No dumbing down of tools during "peak" business hours.
 
-No worries, you get a lot out of 48G of video memory too! But bigger is always better of course.
+###### *Continuous use. Energy costs not included. Because someone **will** complain …
 
-You might ask: _"Hold on how much? Isn't there a RAM shortage?"_, but hear me out. The bar to enter is not that high anymore!
+## What to buy
 
-Yes, if you want raw speed, two Nvidia RTX 5090 24GB in a big watercooled tower and RGB lighting is a fancy thing to have. But for that I can rent a GPU for a long time. Also – thanks to data centers – we pay a lot more for energy these days. I don't need to run the A/C in the summer to cool a space-heater running at 1,000 W.
+Don't see this advice as gospel. Look at what you're doing and what your needs are. I still have a capable M1 Pro with 32GB RAM. But I needed something to offload AI tasks to. For 80%+ of my use I can wait a minute for something to complete. You might find more parallel tasks or faster speeds desireable.
 
-But! – you can get your own local AI with a ~200W total system envelope for around $2,000. They have been talked about for a while now – and there are plenty of great tutorials on YouTube (e.g. by Kyuz) on how to set them up. I'm speaking of course about **AMD's Ryzen AI 395+ Max or Strix Halo**. They conveniently come with 96G and 128G unified RAM versions.
+If you don't want to run your own LLMs right away, you can use services like OpenRouter, or host a GPU in the cloud. See how these models fit into your workflow first.
 
-They also fit in many forms factors. From laptop to desktop (Framework!) or even shoebox sized Mini-PCs. One of the latter I have in my networking closet. I like to have the machine available from anywhere.
+But we strive for independence here.
 
-But there's not only Nvidia and AMD. Apple's M-Series SoC is a worthwhile contender in this space. But you do pay a steep premium for their higher RAM options.
+> "640K ought to be enough for anybody!"\
+> — (Not) Bill Gates
+
+The first computers I used barely had 128MB RAM. Big, beige clunkers on the desk. There was some kid-like glee holding a computer with 1,000 times the memory in your hands that is not a server.
+
+The rapid development of both models and hardware makes any "definitive" recommendation short-lived. This is meant as a starting place for your own research.
+
+If have GPU to add to, you get a lot out of 24G of video memory too! But bigger is always better of course.
+
+You want raw speed – while staying in the consumer market – two Nvidia RTX 5090 24GB in a big watercooled tower is nice to have. Especially if you like to game too. But that's money that can rent GPUs in the cloud for a long time. Also – thanks to data centers – we pay a lot more for energy these days. I don't need to run the A/C in the summer to cool a "space-heater" that itself cools 1,000W.
+
+But! – you can get your own local AI with a ~200W total system envelope for around $2,000.
+
+AMD's Ryzen AI 395+ Max or Strix Halo with 96G and 128G unified RAM versions fitting 120B MoE models. They have been talked about for a while now – and there are plenty of great tutorials on YouTube (e.g. by Kyuz0) on how to set them up. They come as laptops, mini-pc and desktops.
+
+But there's not only Nvidia and AMD. Apple's M-Series SoC is a good option in this space. But you do pay a steep premium for their higher RAM options.
 
 What matters in the end is a high memory bandwidth to the memory you have.
 
@@ -202,8 +220,10 @@ This is a clean slate setup. No opinionated configurations or tools added. A sta
 
 Let's assume you have an AMD Strix Halo machine set up and the GPU configured to be usable by Docker. The following demonstrates a tested configuration to run the aforementioned Qwen3.6 35B A3B model on this machine.
 
-> ![AMD Strix Halo btop](../assets/posts/glogb/btop-screenshot.jpg)
-> My personal setup uses 96/128G for VRAM and the remaining 32G RAM are split between Docker host VMs. One of them hosts the llama.cpp server and several other loads. You can see here that the model uses about 40G VRAM with its full context size of 256k tokens.
+> ![AMD Strix Halo btop](../assets/posts/glogb/btop-screenshot.jpg)\
+> `btop` showing current CPU / GPU usage
+
+My personal setup uses 96/128G for VRAM and the remaining 32G RAM are split between Docker host VMs. One of them hosts the llama.cpp server and several other loads. You can see here that the model uses about 40G VRAM with its full context size of 256k tokens.
 
 The rest of the used VRAM is used by a small model for title and follow up question generation in Open WebUI. I recommend something a current, small model like Qwen3.5 2B for example. Configured with enough context to handle long conversations for title requests.
 
