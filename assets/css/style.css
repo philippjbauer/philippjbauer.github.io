@@ -11,8 +11,9 @@
 *, *::before, *::after { box-sizing: border-box }
 html, body { height: 100% }
 body {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-  line-height: 1.7;
+  font-family: "Noto Sans", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
   color: var(--text);
   background: var(--bg);
   margin: 0;
@@ -37,7 +38,7 @@ body {
   flex: 1;
   min-width: 0;
   padding: 48px;
-  max-width: calc(var(--max-width) + 96px);
+  max-width: 120ch;
 }
 
 /* ── Sidebar ──────────────────────────────────────────────── */
@@ -107,7 +108,7 @@ body {
 .post-list-item:last-child { border-bottom: none }
 
 .post-list-title {
-  font-family: Merriweather, serif;
+  font-family: "Fjord One", serif;
   font-size: 1.3rem;
   font-weight: 700;
   margin: 0 0 8px;
@@ -134,7 +135,7 @@ body {
 }
 
 .post-hero .image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
@@ -148,22 +149,24 @@ body {
 }
 
 .post h1 {
-  font-family: Merriweather, serif;
-  font-size: 1.875rem;
+  font-family: "Fjord One", serif;
+  font-size: 2.6rem;
   font-weight: 700;
   line-height: 1.25;
   color: var(--text);
   margin: 0 0 12px;
 }
 .post h2 {
-  font-family: Merriweather, serif;
-  font-size: 1.25rem;
+  font-family: "Fjord One", serif;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--text);
-  margin: 2em 0 0.5em;
+  margin: 1em 0 0.5em;
   line-height: 1.3;
 }
-.post h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5em 0 0.4em }
+.post h3 { font-family: "Fjord One", serif; font-size: 1.8rem; font-weight: 600; color: var(--text); margin: 1.5em 0 0.4em }
+
+.post h4 { font-family: "Fjord One", serif; font-size: 1.4rem; font-weight: 600; color: var(--text); margin: 1.5em 0 0.4em }
 
 .post p { color: #1f2937; margin: 0 0 1.1em; font-size: 1rem }
 
@@ -190,7 +193,8 @@ body {
   border-radius: 3px;
   padding: 0.1em 0.35em;
 }
-.post pre {
+.post pre,
+.post .highlight pre {
   background: #f3f4f6;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -198,11 +202,143 @@ body {
   overflow-x: auto;
   margin: 0 0 1.25em;
 }
-.post pre code { background: none; border: none; padding: 0; font-size: 0.875rem }
+.post .highlight {
+  background: transparent;
+  border: none;
+  margin: 0 0 1.25em;
+}
+.post .highlight code { background: none; border: none; padding: 0; font-size: 0.875rem }
 
+.post .highlight .c,
+.post .highlight .cm,
+.post .highlight .cp,
+.post .highlight .cpf,
+.post .highlight .c1,
+.post .highlight .cs {
+  color: #475569;
+  font-style: italic;
+}
+.post .highlight .err {
+  color: #ef4444;
+}
+.post .highlight .k,
+.post .highlight .kd,
+.post .highlight .kp,
+.post .highlight .kr,
+.post .highlight .kt {
+  color: #2563eb;
+}
+.post .highlight .nb,
+.post .highlight .nc,
+.post .highlight .ne,
+.post .highlight .nf,
+.post .highlight .ni,
+.post .highlight .nn {
+  color: #d946ef;
+}
+.post .highlight .s,
+.post .highlight .sb,
+.post .highlight .sc,
+.post .highlight .sd,
+.post .highlight .s2,
+.post .highlight .se,
+.post .highlight .sh,
+.post .highlight .sx {
+  color: #14b8a6;
+}
+.post .highlight .m,
+.post .highlight .mf,
+.post .highlight .mh,
+.post .highlight .mi,
+.post .highlight .mo {
+  color: #f97316;
+}
+.post .highlight .o,
+.post .highlight .p,
+.post .highlight .ow {
+  color: #111827;
+}
+.post .highlight .gp,
+.post .highlight .gs {
+  color: #8b5cf6;
+}
 .post img { max-width: 100%; height: auto; border-radius: 4px }
 
 .post hr { border: none; border-top: 1px solid var(--border); margin: 2em 0 }
+
+/* ── Tables ───────────────────────────────────────────────── */
+.post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.post thead {
+  background: #f3f4f6;
+}
+
+.post th {
+  text-align: left;
+  padding: 0.7em 1em;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+}
+
+.post td {
+  padding: 0.65em 1em;
+  color: #374151;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.post tbody tr { border-bottom: 1px solid var(--border) }
+.post tbody tr:last-child { border-bottom: none }
+.post tbody tr:nth-child(even) { background: #fafbfc }
+.post tbody tr:hover { background: #f0f4ff }
+
+/* Two-column option tables: narrow key, wide value */
+.post table col.option-col { width: 1%; min-width: 180px }
+.post table col.option-col td,
+.post table col.option-col th {
+  padding-right: 1.25em;
+  white-space: nowrap;
+}
+.post table col.option-col code {
+  font-family: "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 4px;
+  padding: 0.15em 0.45em;
+  color: #4338ca;
+  white-space: nowrap;
+}
+.post table col.option-col td { font-weight: 500 }
+
+.post table col.value-col { width: auto }
+.post table col.value-col td { color: #4b5563 }
+
+.post table-wrapper {
+  overflow-x: auto;
+  margin: 1.5em 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.post table-wrapper table {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
 
 /* ── Dark mode ────────────────────────────────────────────── */
 @media (prefers-color-scheme: dark) {
@@ -222,7 +358,76 @@ body {
   .post-excerpt { color: #9ca3af }
 
   .post code,
-  .post pre { background: #1e2330; border-color: var(--border) }
+  .post pre,
+  .post .highlight pre { background: #0f172a; border-color: var(--border) }
+  .post .highlight { background: transparent; border: none }
+
+  .post .highlight .c,
+  .post .highlight .cm,
+  .post .highlight .cp,
+  .post .highlight .cpf,
+  .post .highlight .c1,
+  .post .highlight .cs {
+    color: #94a3b8;
+    font-style: italic;
+  }
+  .post .highlight .err {
+    color: #fb7185;
+  }
+  .post .highlight .k,
+  .post .highlight .kd,
+  .post .highlight .kp,
+  .post .highlight .kr,
+  .post .highlight .kt {
+    color: #38bdf8;
+  }
+  .post .highlight .nb,
+  .post .highlight .nc,
+  .post .highlight .ne,
+  .post .highlight .nf,
+  .post .highlight .ni,
+  .post .highlight .nn {
+    color: #f472b6;
+  }
+  .post .highlight .s,
+  .post .highlight .sb,
+  .post .highlight .sc,
+  .post .highlight .sd,
+  .post .highlight .s2,
+  .post .highlight .se,
+  .post .highlight .sh,
+  .post .highlight .sx {
+    color: #5eead4;
+  }
+  .post .highlight .m,
+  .post .highlight .mf,
+  .post .highlight .mh,
+  .post .highlight .mi,
+  .post .highlight .mo {
+    color: #f59e0b;
+  }
+  .post .highlight .o,
+  .post .highlight .p,
+  .post .highlight .ow {
+    color: #e2e8f0;
+  }
+  .post .highlight .gp,
+  .post .highlight .gs {
+    color: #a78bfa;
+  }
+
+  .post thead { background: #1a1f2e }
+  .post td { color: #d1d5db }
+  .post tbody tr:nth-child(even) { background: #161b27 }
+  .post tbody tr:hover { background: #1e2538 }
+
+  /* Dark mode: two-column option tables */
+  .post table col.option-col code {
+    background: #1e1b4b;
+    border-color: #3730a3;
+    color: #a5b4fc;
+  }
+  .post table col.value-col td { color: #9ca3af }
 }
 
 /* ── Mobile top bar (hidden on desktop) ───────────────────── */
