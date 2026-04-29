@@ -246,6 +246,78 @@
     font-size: 10px;
     color: #999;
   }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #0f1117;
+      color: #e5e7eb;
+    }
+
+    .container {
+      background: transparent;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #141b2b 0%, #111827 100%);
+      border-color: rgba(148, 163, 184, 0.16);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .card.anthropic {
+      background: linear-gradient(135deg, #191c24 0%, #14161f 100%);
+      border-color: rgba(212, 175, 122, 0.22);
+    }
+    .card.qwen {
+      background: linear-gradient(135deg, #18151f 0%, #16122a 100%);
+      border-color: rgba(155, 114, 207, 0.22);
+    }
+
+    .card-name,
+    .card-meta,
+    .bench-label,
+    .bench-score,
+    .stat-label,
+    .stat-value,
+    .stat-pos,
+    .timeline-label,
+    .legend-item,
+    .legend-source {
+      color: #d1d5db;
+    }
+
+    .card-meta,
+    .bench-label,
+    .legend-source,
+    .timeline-label {
+      color: #9ca3af;
+    }
+
+    .card.anthropic .card-name { color: #d4af7a; }
+    .card.qwen .card-name { color: #c4a0ff; }
+    .card.anthropic .bench-score { color: #d4af7a; }
+    .card.qwen .bench-score { color: #c4a0ff; }
+    .card.anthropic .stat-value { color: #d4af7a; }
+    .card.qwen .stat-value { color: #c4a0ff; }
+    .card.anthropic .stat-pos { color: #d4af7a; }
+    .card.qwen .stat-pos { color: #c4a0ff; }
+
+    .bar-track {
+      background: rgba(148, 163, 184, 0.12);
+    }
+
+    .divider {
+      background: rgba(148, 163, 184, 0.12);
+    }
+
+    .timeline-line {
+      background: rgba(148, 163, 184, 0.12);
+    }
+
+    .legend {
+      background: rgba(15, 17, 23, 0.9);
+      border-color: rgba(148, 163, 184, 0.12);
+    }
+  }
 </style>
 </head>
 <body>
