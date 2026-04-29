@@ -13,30 +13,32 @@ translation_id: go-local-or-go-broke
 layout: posts
 ---
 
-## Your coding agent is about to be expensive!
+## Your coding agent just got more expensive
 
 You're vibing away with coffee in hand, poking the Claude or Copilot agent – then suddenly – you get a warning that your daily quota limit is at 50% and resets after lunch. At 10am? A few weeks later you swear that your premium requests ran out faster than usual. Didn't you easily get through the month before?
 
-[Anthropic discontinuing Claude Code tool on their Pro plan](https://www.xda-developers.com/anthropic-cut-claude-code-new-pro-subscriptions/), [dwindling quotas that urge you to upgrade subscriptions](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing#model-multipliers-for-annual-copilot-pro-and-copilot-pro-subscribers) and [quiet changes to subscription plans](https://consumerrights.wiki/w/CursorAI_adds_rate_limits_to_unlimited_plans). All of that and more is already here and more is just ahead of us.
+Anthropic [tested removing Claude Code from its Pro plan](https://www.xda-developers.com/anthropic-cut-claude-code-new-pro-subscriptions/) – a signal of things to come – alongside [dwindling quotas](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing#model-multipliers-for-annual-copilot-pro-and-copilot-pro-subscribers) and [quiet changes to subscription plans](https://consumerrights.wiki/w/CursorAI_adds_rate_limits_to_unlimited_plans). The writing is already on the wall.
+
+The answer isn't to pay more for worse service. It's to stop paying at all. Local AI has reached the point where you can run frontier-class models on your own hardware – private, predictable, and ultimately cheaper.
 
 **Reclaim your tools! Stop being dependent on subscription services!**
 
 > Just here for the goods? Docker compose files can be found on [GitHub](https://github.com/philippjbauer).
 
-## What's happening to your subscription?
+## The subscription model is collapsing
 
-**The subscription model for AI models is collapsing.** It was quiet at first, now we hear the horns beyond the hill. It doesn't take an economist to see that subsidizing subscriptions by 10–100x their monthly cost isn't sustainable.
+**The subscription model for AI models is collapsing.** It was quiet at first, now we hear the horns beyond the hill. It doesn't take an economist to see that subsidizing subscriptions by 10-100x their monthly cost isn't sustainable.
 
-> [OpenAI] CFO ​Sarah Friar has expressed concerns […] that the ChatGPT creator **might not ​be able to pay for future computing contracts** ​if revenue doesn’t grow fast enough, […]\
+> [OpenAI] CFO ​Sarah Friar has expressed concerns [...] that the ChatGPT creator **might not ​be able to pay for future computing contracts** ​if revenue doesn't grow fast enough, [...]\
 > Source: [Reuters – 28th April, 2026](https://www.reuters.com/business/openai-falls-short-revenue-user-targets-it-races-toward-ipo-wsj-reports-2026-04-28/)
 
-### The APIocalypse
+### The subscription trap
 
 The story behind how AI companies are selling us our helpers for so little money is quite eye opening. I mean – a subscription to frontier models for $20/mo – I'll take that without asking too much.
 
-But it's the same playbook we've seen before. Like every subscription service that was cheap and exciting, that was then enshittified over time. 
+But it's the same playbook we've seen before. Like every subscription service that was cheap and exciting, that was then enshittified over time.
 
-The first phase – the one we're slowly departing from – hook as many people onto your product as possible. Just like Uber they follow the same strategy. Uber heavily subsidized ride fares to capture the market.
+The first phase – the one we're slowly departing from – hook as many people onto your product as possible. Just like Uber, they heavily subsidized prices to capture the market.
 
 After people are familiar with the service and have become dependent, **they jack up the prices for the pro plans, reduce the quality and features of the entry plans and add advertisements for free plans**. The pricing for enterprise and API pricing will remain largely stable, paying for the subsidies and the subscription plans.
 
@@ -49,45 +51,39 @@ To compensate **we have already seen** the mentioned **price increases, features
 
 > It's a risky plan in a volatile market and unpredictable global events.
 
-#### Data is the new oil
+### Does your data vanish with the company?
 
 **Your data is in the hands of companies that are failing to make a profit.** And it is **most sensitive kind of data people can share**. Thoughts. Feelings. Secrets. Data that opens people up to immense harm should it somehow get into the wrong hands.
 
 It carries the memories of 23 and Me and the controversy around the sale of customers' genetic data during their bankruptcy.
 
-Now imagine if OpenAI is not able to create a return for investors that look to loose tens of billions of dollars. 
+Now imagine if OpenAI is not able to create a return for investors that look to lose tens of billions of dollars.
 
 **Who'll end up owning you?**
 
 > ![Bilbo OpenAI looking at your most private data, thinking "Why Not?"](../assets/posts/glogb/bilibo-openai-data.jpg)\
 >  Why not? — Sam Altman
 
-## “No thank you, Sam.”
+## Local AI just leapt forward – what just changed
 
-Over the last three years, other vendors have steadily kept up with OpenAI and Anthropic. **Today, small models that run reasonably fast on consumer hardware match flagship model's capabilities from half a year ago.**
+Over the last three years, other vendors have steadily kept up with OpenAI and Anthropic. **Today, small models match flagship model's capabilities from half a year ago, and run fast enough on consumer hardware.**
 
-If you use these models as a tool that executes on your thinking and skill – augmenting you instead of trying to replacing you – **then now is the time to build your own, private and secure infrastructure at home or on your laptop.**
+Unlike their western "Open" AI counterparts, models from China and Europe have been made freely available to the public for a number of years. This month a new model release has changed local LLMs in a significant way. On top of that, open-source releases keep step on the tooling side.
 
-Now you can say: “No thank you.” to what Sam Altman and Dario Amodei have to offer. 
+### Qwen 3.6 – the 27B frontier-class
 
-> Maybe contribute back in meaningful ways when you have liberally taken from the whole internet
+Replacing its very capable predecessor, Qwen3.6 has been released just a short while ago. So far the Qwen3.6 35B A3B MoE and dense 27B variants have been released.
 
-## What has changed?
+35B A3B is a very capable MoE model that according to their own benchmarking – and yes, take them with a grain of salt – is on-par with their previous Qwen3.5 397B A17B model! One tenth the size and **on-par or better than Claude Sonnet 4.5.**
 
-Unlike their western "Open" AI counterparts, models from China and Europe have been made freely available to the public for a number of years. There have been two key releases this month, that have changed local LLMs in a significant way.
-
-### Qwen 3.6
-
-Replacing its very capable predecessor, Qwen3.6 has been released just a short while ago and immediately passed my personal sniff test. I'm talking specifically about **Qwen3.6 35B A3B variant**. A capable mixture of experts model that according to their own benchmarking – and yes, take them with a grain of salt – **is on-par with their previous Qwen3.5 397B A17B model. But the headline for me is: it's in spitting distance to Claude Opus 4.5!**
-
-And Qwen3.6's performance goes up with dense 27B parameter sibling.
+But the headline for me, **a dense 27B model competing with Claude Opus 4.5!**
 
 <blockquote>
  <img src="../assets/posts/glogb/qwen3_6-benchmarks-condensed.jpg" alt="Qwen3.6 Benchmarks" /><br>
-– Source: Alibaba / Qwen
+— Source: Alibaba / Qwen
 </blockquote>
 
-### Open WebUI – an alternative to Chat GPT
+### Open WebUI: your local AI workspace
 
 The second big change are the latest versions of Open WebUI. A replacement for OpenAI's ChatGPT interface. **It comes with tool calling, MCP and skills support. It can use memories, write notes and extract information from uploaded documents. It allows the use of sandboxed CLI environments, control headless browsers and can schedule automations for you.**
 
@@ -100,11 +96,11 @@ The second big change are the latest versions of Open WebUI. A replacement for O
 
 Their license should be read carefully though before you consider commercial use.
 
-### Slim Coding Agents
+### Cut the bloat, keep the smarts
 
-What happens when the people that sell you tokens, give you a tool that consumes them? 
+What happens when the people that sell you tokens, give you a tool that consumes them?
 
-**They make sure it needs as many of them as possible.**
+**They make sure it needs as many as possible.**
 
 Every instruction, every gate to not break the user's system, everything that was put in place for people who want to YOLO their new SaaS – all of that are tokens YOU pay for. If you need it or not.
 
@@ -112,16 +108,22 @@ And then your custom agents' behavior changes because of an update to those inst
 
 But was it an update to your agent's harness? Was it because the same model is served quantized after lunch? **You can't know!** LLMs are unreliable enough in their own specific ways. With changing variables in the mix, you can't improve your workflow.
 
-That's where bare-bones coding agent harnesses come in. Unopinionated, expandable, easy on the tokens. Projects like – or based on – [Pi](https://pi.dev).
+That's where bare-bones coding agent harnesses come in. Unopinionated, expandable, easy on the tokens. Projects like – or based on – [Pi Coding Agent](https://pi.dev).
 
 > ![Pi Coding Agent](../assets/posts/glogb/pi-screenshot.png)\
 > Pi Coding Agent in Docker container
 
 Pi is running on a terminal, has a small footprint and can be added to existing containerized dev environments.
 
-## Clash of Capabilities – The Moat is a Lie …
+### "No thank you, Sam."
 
-You have an escape hatch without too much hurt today. What does the future look like?
+If you use these models as a tool that executes on your thinking and skill – augmenting you instead of trying to replacing you – **then now is the time to build your own, private and secure infrastructure at home or on your laptop.**
+
+Now you can say: "No thank you." to what Sam Altman and Dario Amodei have to offer.
+
+## The capability moat is a lie
+
+You have an escape hatch without too much hurt – today. What does the future look like?
 
 In the Dec. 2024 paper "Densing Law of LLMs" by Chaojun Xiao et al., the authors describe that **the capability density of open-source base LLMs doubles approximately every 3.5 months**. This is due to the advancements in model architecture, better training techniques and data quality.
 
@@ -129,53 +131,64 @@ See the following example of a few select coding benchmarks across three generat
 
 <iframe src="../assets/posts/glogb/coding_benchmarks_comparison.html" width="100%" height="620" title="Coding benchmarks comparison" style="border: none; margin-bottom: 1rem;"></iframe>
 
-### … owning nothing and being happy is too.
+### Hardware that pays for itself in a month
 
 **If you need a simple argument that a ~$2,000 hardware investment beats continued API pricing:**
 
-Look at Claude Sonnet 4.5 API costs [on OpenRouter](https://openrouter.ai/anthropic/claude-sonnet-4.5): `$3/Mtok in` / `$15Mtok out` (in April '26)
+Look at Claude Sonnet 4.5 API costs [on OpenRouter](https://openrouter.ai/anthropic/claude-sonnet-4.5): `$3/M tokens in` / `$15/M tokens out` (in April '26)
 
 > ![Claude Sonnet 4.5 Pricing on OpenRouter](../assets/posts/glogb/claude-sonnet-4_5-pricing.png)
 
 Get the napkin, let's do some math:
 
-> Ratio of input / output tokens: 8:1\
-> Mixed price: `$3 + $15/8 = $4.90`\
-> ~ $5.00 to make things easier:\
-> `2,000 $ / 5 $/Mtok = 400 Mtok`
+> **Step 1 – blended cost per million tokens:**\
+> Typical AI agent usage has roughly an 8:1 input-to-output ratio.\
+> Blended cost: `$3 + ($15 ÷ 8) = $4.90` ≈ **$5.00 per M tokens**\
+> \
+> At this rate, a **$2,000 hardware investment** buys you the same compute as:\
+> `$2,000 ÷ $5.00 × 1,000,000 = 400,000,000 tokens`
 
-But you have more input than output, you have caching all at different pricing.
+But your input/output ratio will vary, caching helps, and not all models price the same.
 
-Let's handwave a little bit:
+Allow me to handwave a little bit 👋
 
+> **Step 2 – how long does that last?**\
 > Qwen3.6 35B A3B: ~600 tok/s processing, ~40 tok/s generation (approx., acknowledges long context)\
-> Mixed throughput: `600 tok/s / 8 + 40 tok/s = 115 tok/s`\
-> `400,000,000 tok / (115 tok/s * 60s * 60m * 24h) = 40.25 days`
+> Mixed throughput: `600 ÷ 8 + 40 = 115 tok/s`\
+> \
+> `400,000,000 tokens ÷ (115 tok/s × 60 × 60 × 24) = **~40.25 days**`
 
-**If you paid for API prices a single machine paid for itself just over a month!**
+**If you used API pricing for continuous use, that single machine paid for itself in just over a month\*!**
 
-**You'll have control over your tools. No suprise changes in system messages. No dumbing down of tools during "peak" business hours.**
+**You'll have control over your tools. No surprise changes in system messages. No dumbing down of tools during "peak" business hours.**
 
-###### *Continuous use. Energy costs not included. Because someone will complain …
+<small>\*remember my handwaving!</small>
 
-## What to buy
+## Choosing your local AI machine
 
-Don't see this advice as gospel. Look at what you're doing and what your needs are. I still have a capable M1 Pro with 32GB RAM. But I needed something to offload AI tasks to. For 80%+ of my use I can wait a minute for something to complete. You might find more parallel tasks or faster speeds desireable.
+I will give you my example, what worked for me. But you'll have to look at what you're doing and what your needs are. This part should inspire you to dig a little bit what new hardware is out there.
 
-**If you don't want to run your own LLMs right away, you can use services like OpenRouter, or host a GPU in the cloud. See how these models fit into your workflow first.**
+My M1 Pro with 32GB RAM has been with me for 5 years and still feels very capable. It has a high enough memory bandwidth to run some capable, small models. But Firefox alone hogs half of it, so I needed something to offload AI tasks to. For 90% of my use in Copilot, Claude Sonnet 4.5 was good enough for me. And I can wait a minute for something to complete. I don't necessarily need 150 token/sec throughput. I favored being able to run large 120B MoE models over speed and then also have remaining resources to run some VMs and containers.
 
-But we strive for independence here.
+You might want more parallel tasks or faster speeds. As so often, it depends.
+
+> **A quick note:**
+> If you don't want to run your own LLMs right away, you can use services like OpenRouter, or host a GPU in the cloud. See how these models fit into your workflow first.
+>
+> But we strive for independence here.
+
+The first computers I used barely had 128MB RAM. Big, beige clunkers on the desk. There was some kid-like glee holding a computer with 1,000 times the memory in your hands that is not a server.
 
 > "640K ought to be enough for anybody!"\
 > — (Not) Bill Gates
 
-The first computers I used barely had 128MB RAM. Big, beige clunkers on the desk. There was some kid-like glee holding a computer with 1,000 times the memory in your hands that is not a server.
-
 The rapid development of both models and hardware makes any "definitive" recommendation short-lived. This is meant as a starting place for your own research.
 
-If have GPU to add to, you get a lot out of 24G of video memory too! But bigger is always better of course.
+If you have a GPU to add to your build, 24 GB of video memory goes a long way.
 
-You want raw speed – while staying in the consumer market – two Nvidia RTX 5090 24GB in a big watercooled tower is nice to have. Especially if you like to game too. But that's money that can rent GPUs in the cloud for a long time. Also – thanks to data centers – we pay a lot more for energy these days. I don't need to run the A/C in the summer to cool a "space-heater" that itself cools 1,000W.
+But more is always better. You want more speed? Two Nvidia RTX 5090 24GB in a big watercooled tower is quite nice to have. And if you already like to game …
+
+But that's money that can rent GPUs in the cloud for a long time. Also – thanks to data centers – we pay a lot more for energy these days. I don't need to run the A/C in the summer to cool a "space-heater" that itself cools 1,000W.
 
 But! – **you can get your own local AI with a ~200W total system envelope for around $2,000.**
 
@@ -185,29 +198,33 @@ But there's not only Nvidia and AMD. Apple's M-Series SoC is a good option in th
 
 What matters in the end is a high memory bandwidth to the memory you have.
 
-I have explained this in my 2024 CODE magazine article, so I won't go into the details here: [You’re Missing Out on Open-Source LLMs!](https://codemag.com/Article/2403041/You%E2%80%99re-Missing-Out-on-Open-Source-LLMs!). The hardware has of course advanced since.
+I have explained this in my 2024 CODE magazine article, so I won't go into the details here: [You're Missing Out on Open-Source LLMs!](https://codemag.com/Article/2403041/You%E2%80%99re-Missing-Out-on-Open-Source-LLMs!). The hardware has of course advanced since.
 
-**The essence is: don't go below 200GB/s memory bandwidth and no less than 48G usable VRAM.** At that point MoE models with 3–10B active parameters are fast enough for most live interactions. If you want to use dense models in the ~30B parameter territory look for 800GB/s+ bandwidth. With less bandwidth they still work for unattended processes that need more precision and less user input.
+**The essence is: don't go below 200GB/s memory bandwidth and no less than 48G usable VRAM.** At that point MoE models with 3-10B active parameters are fast enough for most live interactions. If you want to use dense models in the ~30B parameter territory look for 800GB/s+ bandwidth. With less bandwidth they still work for unattended processes that need more precision and less user input.
 
 **And keep the Densing Law from earlier in mind! These machines will not have to be upgraded to run more capable models in the future.**
 
-### Service Suggestions
+### Privacy and scaling with the cloud
 
-#### Staying anonymous with a VPN
+#### Keeping your traffic private
 
-I won't tell you who to choose, because VPN providers are hotly debated. **But if you don't already have one – get a VPN.** You'll need it later to run your search and LLM agent's traffic so it's not your IP that potentially gets caught in a bot list.
+I won't tell you who to choose, because VPN providers are hotly debated. Also, no one sponsors me.
 
-But more importantly: **this is about independence as much as it is about keeping your data private.**
+**But if you don't already have one – get a VPN.**
 
-#### A step up from local models
+You'll need it later to run your search and LLM agents' traffic through. So it's not your IP that potentially gets caught in a bot list. But more importantly: **this is about independence as much as it is about keeping your data private.**
 
-Sometimes the local AI is not enough yet. **There is no shame in using APIs.** If you do need that extra bit of intelligence – go with services like OpenRouter or Rent-a-GPU services. Large frontier models exist outside of Anhtropic and OpenAI. Up to 1T parameter models are a thing there too. GLM, MiniMax and the larger Qwen models are all very capable. And way more affordable than their US counterparts.
+#### Local first, cloud when needed
 
-**Data sharing is handled granulary and there are providers that don't save any data for longer than needed to fulfill your request.** Renting and spinning up a model on your rented GPU may be even cheaper depending on your use case. Per 1 million token pricing vs. hourly GPU pricing can favor rented GPUs for long running, continuous agent tasks.
+If you do need that extra bit of intelligence – you can go with services like OpenRouter or rent a GPU and host it yourself.
+
+Large frontier-level models exist outside of Anthropic and OpenAI too. GLM, MiniMax and the larger Qwen models are all very capable models. Try them on and see how they fit. They have more affordable API pricing than their US counterparts too!
+
+**Data sharing is handled granularly, and there are providers that don't retain your data longer than needed to fulfill your request.** Renting and spinning up a model on your rented GPU may be even cheaper depending on your use case. Per 1 million token pricing vs. hourly GPU pricing can favor rented GPUs for long running, continuous agent tasks.
 
 > You can run the setup without any 3rd party services. But I don't recommend it.
 
-### Software Requirements
+### Before you start: Docker and LLM servers
 
 To run the compose file I have prepared **you'll need a host with Docker preinstalled.**
 
@@ -215,7 +232,7 @@ The details regarding how to prepare your system depend on the hardware you chos
 
 **The Docker stack I composed does not include a service to run the LLM.** Personally, I test different LLMs on a regular basis and don't want to have them entangled in this setup. You may choose differently. Commonly you'd use llama.cpp or vLLM to run models. Depending – again – on what hardware you choose. Nvidia, AMD and Apple all have individual requirements.
 
-## The Open WebUI stack
+## Your privacy-first Open WebUI stack
 
 The Open WebUI stack comes with integrated services including VPN, search, browser automation, and vector database. Over time I have honed this setup and combined everything in this comprehensive stack.
 
@@ -317,14 +334,14 @@ BACKUP_LOCAL_PATH=./backups
 BACKUP_ENCRYPTION_METHOD=gpg
 BACKUP_ENCRYPTION_PASSPHRASE=your-encryption-passphrase
 
-# SSH/SCP remote backup (disabled by default - uncomment and configure as needed)
+# SSH/SCP remote backup (disabled by default – uncomment and configure as needed)
 # BACKUP_SCP_HOST=your-backup-server
 # BACKUP_SCP_USER=backup-user
 # BACKUP_SCP_PATH=/home/backup-user/docker-backups
 # SSH_IDENTITY_FILE=./ssh.key
 ```
 
-## Running LLMs on GPU enabled Docker hosts
+## Running Qwen3.6 on AMD Strix Halo
 
 Let's assume you have an AMD Strix Halo machine set up and the GPU configured to be usable by Docker. **The following demonstrates a tested configuration to run the aforementioned Qwen3.6 35B A3B model on this machine.**
 
@@ -335,7 +352,7 @@ My personal setup uses 96/128G for VRAM and the remaining 32G RAM are split betw
 
 The rest of the used VRAM is used by a small model for title and follow up question generation in Open WebUI. I recommend something a current, small model like Qwen3.5 2B for example. Configured with enough context to handle long conversations for title requests.
 
-### LLama.cpp Server Compose for AMD Strix Halo (gfx1151)
+### Llama.cpp Server Compose for AMD Strix Halo
 
 ```yaml
 services:
@@ -506,15 +523,15 @@ LLAMA_ARG_CTX_SIZE=262144
 # LLAMA_ARG_CTX_SIZE=262144
 ```
 
-## Closing thoughts
+## Machines amplify us – they don't replace us
 
 I've been advocating to not let the machines take over your engineering discipline. **Humans should be in charge of and responsible for the code AI tools generate.**
 
-If you have spent a lifetime learning how to code, how to design systems and deploy them. When you know about the many edge cases that can arise in systems. When you experienced how only the right questions — not assumptions – lead to good project outcomes. Then you know as well as I do that **LLMs can't operate completely independently. They can amplify us – but not fully replace us.**
+If you have spent a lifetime learning how to code, how to design systems and deploy them. When you know about the many edge cases that can arise in systems. When you experienced how only the right questions – not assumptions – lead to good project outcomes. Then you know as well as I do that **LLMs can't operate completely independently. They can amplify us – but not fully replace us.**
 
-**Used with care and a capable guiding hand local models can do what we were used to of frontier-models.** With more effiecient coding harnesses like Pi – rather than the token-slurping Claude Code – even better!
+**Used with care and a capable guiding hand local models can do what we were used to of frontier-models.** With more efficient coding harnesses like Pi – rather than the token-slurping Claude Code – even better!
 
-Not only do we insulate ourselves from a signifcant increase in prices at the token-pump.
+Not only do we insulate ourselves from a significant increase in prices at the token pump.
 
 But you can also make as statement that you don't want:
 
@@ -527,4 +544,3 @@ But instead you send a signal that you want:
 - **predictability and control over your tools and what powers them,**
 - **the choice of when and how someone else processes your data,**
 - **alternatives to closed-source models from big AI companies with uncertain futures.**
-
