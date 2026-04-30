@@ -31,7 +31,9 @@ The answer isn't to pay more for worse service. It's to stop paying at all. Loca
 
 ## The subscription model is collapsing
 
-**The subscription model for AI models is collapsing.** It was quiet at first, now we hear the horns beyond the hill. It doesn't take an economist to see that subsidizing subscriptions by 10-100x their monthly cost isn't sustainable.
+AI vendors in the US are struggling to make a profit from subscriptions. It was quiet at first, now we hear the horns from beyond the hill. It doesn't take an economist to see that subsidizing subscriptions by 10-100x their monthly cost isn't sustainable.
+
+Reuters wrote this week, that:
 
 > [OpenAI] CFO ​Sarah Friar has expressed concerns [...] that the ChatGPT creator **might not ​be able to pay for future computing contracts** ​if revenue doesn't grow fast enough, [...]\
 > Source: [Reuters – 28th April, 2026](https://www.reuters.com/business/openai-falls-short-revenue-user-targets-it-races-toward-ipo-wsj-reports-2026-04-28/)
