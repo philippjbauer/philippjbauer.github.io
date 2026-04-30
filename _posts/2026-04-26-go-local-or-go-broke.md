@@ -1,13 +1,15 @@
 ---
 title: "Go Local or Go Broke!"
-date: 2026-04-26
+date: 2026-04-29
 permalink: /go-local-or-go-broke/
-description: ""
+description: "How subscription-based AI is becoming unsustainable and why running open-source models locally on your own hardware is the smarter choice for independence, privacy, and cost savings."
 categories:
   - AI
-  - privacy
-  - local computing
-  - digital sovereignty
+  - Open Source
+  - Privacy
+  - Infrastructure
+  - Docker
+
 lang: en
 translation_id: go-local-or-go-broke
 layout: posts
@@ -23,7 +25,7 @@ The answer isn't to pay more for worse service. It's to stop paying at all. Loca
 
 **Reclaim your tools! Stop being dependent on subscription services!**
 
-> Just here for the goods? Docker compose files can be found on [GitHub](https://github.com/philippjbauer).
+> Just here for the goods? The privacy-first Open WebUI Docker Compose files can be found on [GitHub](https://github.com/philippjbauer/privacy-open-webui-stack).
 
 ## The subscription model is collapsing
 
@@ -247,7 +249,7 @@ The Open WebUI stack comes with integrated services including VPN, search, brows
 - **[Open Terminal](https://github.com/open-webui/open-terminal)** – Web-based terminal access
 - **Automated Backups** – Scheduled volume backups with encryption
 
-#### Download the [Open WebUI stack on GitHub](https://github.com/philippjbauer)
+#### Download the [privcay-first Open WebUI stack on GitHub](https://github.com/philippjbauer/privacy-open-webui-stack)
 
 ### Quickstart
 
