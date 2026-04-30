@@ -32,7 +32,7 @@ The answer isn't to pay more for worse service. It's to stop paying at all. Loca
 > [OpenAI] CFO ​Sarah Friar has expressed concerns [...] that the ChatGPT creator **might not ​be able to pay for future computing contracts** ​if revenue doesn't grow fast enough, [...]\
 > Source: [Reuters – 28th April, 2026](https://www.reuters.com/business/openai-falls-short-revenue-user-targets-it-races-toward-ipo-wsj-reports-2026-04-28/)
 
-### The subscription trap
+### It's the same old playbook
 
 The story behind how AI companies are selling us our helpers for so little money is quite eye opening. I mean – a subscription to frontier models for $20/mo – I'll take that without asking too much.
 
@@ -72,7 +72,7 @@ Unlike their western "Open" AI counterparts, models from China and Europe have b
 
 ### Qwen 3.6 – the 27B frontier-class
 
-Replacing its very capable predecessor, Qwen3.6 has been released just a short while ago. So far the Qwen3.6 35B A3B MoE and dense 27B variants have been released.
+Replacing its very capable predecessor, [Qwen3.6](https://github.com/QwenLM/Qwen3.6) has been released just a short while ago. So far the Qwen3.6 35B A3B MoE and dense 27B variants have been released.
 
 35B A3B is a very capable MoE model that according to their own benchmarking – and yes, take them with a grain of salt – is on-par with their previous Qwen3.5 397B A17B model! One tenth the size and **on-par or better than Claude Sonnet 4.5.**
 
@@ -90,7 +90,7 @@ The second big change are the latest versions of Open WebUI. A replacement for O
 **Especially the automations** – prompts that are executed at configured intervals – are enabling some interesting use cases without needing to roll your own system.
 
 <blockquote>
- <img class="full-width" src="../assets/posts/glogb/open-webui-demo.jpg" alt="Open WebUI Demo" /><br>
+ <img src="../assets/posts/glogb/open-webui-demo.jpg" alt="Open WebUI Demo" /><br>
  What is AGI, if not an LLM on a schedule?
 </blockquote>
 
@@ -125,7 +125,7 @@ Now you can say: "No thank you." to what Sam Altman and Dario Amodei have to off
 
 You have an escape hatch without too much hurt – today. What does the future look like?
 
-In the Dec. 2024 paper "Densing Law of LLMs" by Chaojun Xiao et al., the authors describe that **the capability density of open-source base LLMs doubles approximately every 3.5 months**. This is due to the advancements in model architecture, better training techniques and data quality.
+In the Dec. 2024 paper ["Densing Law of LLMs"](https://arxiv.org/abs/2412.04315) by Chaojun Xiao et al., the authors describe that **the capability density of open-source base LLMs doubles approximately every 3.5 months**. This is due to the advancements in model architecture, better training techniques and data quality.
 
 See the following example of a few select coding benchmarks across three generations of models. **Within about seven months, an open-source model is in a head-to-head race with Claude Sonnet 4.5. But not only that – it's likely only 1/10th of the frontier-model's size!**
 
@@ -172,9 +172,9 @@ My M1 Pro with 32GB RAM has been with me for 5 years and still feels very capabl
 
 You might want more parallel tasks or faster speeds. As so often, it depends.
 
-> **A quick note:**
-> If you don't want to run your own LLMs right away, you can use services like OpenRouter, or host a GPU in the cloud. See how these models fit into your workflow first.
->
+> **A quick note:**\
+> If you don't want to run your own LLMs right away, you can use services like OpenRouter, or host a GPU in the cloud. See how these models fit into your workflow first.\
+>\
 > But we strive for independence here.
 
 The first computers I used barely had 128MB RAM. Big, beige clunkers on the desk. There was some kid-like glee holding a computer with 1,000 times the memory in your hands that is not a server.
@@ -192,7 +192,7 @@ But that's money that can rent GPUs in the cloud for a long time. Also – thank
 
 But! – **you can get your own local AI with a ~200W total system envelope for around $2,000.**
 
-**AMD's Ryzen AI 395+ Max or Strix Halo with 96G and 128G unified RAM versions fitting 120B MoE models.** They have been talked about for a while now – and there are plenty of great tutorials on YouTube (e.g. by Kyuz0) on how to set them up. They come as laptops, mini-pc and desktops.
+**AMD's Ryzen AI 395+ Max or Strix Halo with 96G and 128G unified RAM versions fitting 120B MoE models.** They have been talked about for a while now – and there are plenty of great tutorials on YouTube (e.g. by [Donato Capitella](https://www.youtube.com/@donatocapitella)) on how to set them up. They come as laptops, mini-pc and desktops.
 
 But there's not only Nvidia and AMD. Apple's M-Series SoC is a good option in this space. But you do pay a steep premium for their higher RAM options.
 
@@ -218,7 +218,7 @@ You'll need it later to run your search and LLM agents' traffic through. So it's
 
 If you do need that extra bit of intelligence – you can go with services like OpenRouter or rent a GPU and host it yourself.
 
-Large frontier-level models exist outside of Anthropic and OpenAI too. GLM, MiniMax and the larger Qwen models are all very capable models. Try them on and see how they fit. They have more affordable API pricing than their US counterparts too!
+Large frontier-level models exist outside of Anthropic and OpenAI too. [Z.ai](https://huggingface.co/zai-org), [MiniMax](https://huggingface.co/MiniMaxAI) and the larger [Qwen](https://huggingface.co/Qwen) models are all very capable models. Try them on and see how they fit. They have more affordable API pricing than their US counterparts too!
 
 **Data sharing is handled granularly, and there are providers that don't retain your data longer than needed to fulfill your request.** Renting and spinning up a model on your rented GPU may be even cheaper depending on your use case. Per 1 million token pricing vs. hourly GPU pricing can favor rented GPUs for long running, continuous agent tasks.
 
@@ -228,9 +228,9 @@ Large frontier-level models exist outside of Anthropic and OpenAI too. GLM, Mini
 
 To run the compose file I have prepared **you'll need a host with Docker preinstalled.**
 
-The details regarding how to prepare your system depend on the hardware you chose. Explaining all of that is beyond the scope of this article. You might want to get fancy and set up Proxmox to run multiple VMs and configure one of them to access the GPU.
+The details regarding how to prepare your system depend on the hardware you chose. Explaining all of that is beyond the scope of this article. You might want to get fancy and set up [Proxmox](https://www.proxmox.com/en/) to run multiple VMs and configure one of them to access the GPU.
 
-**The Docker stack I composed does not include a service to run the LLM.** Personally, I test different LLMs on a regular basis and don't want to have them entangled in this setup. You may choose differently. Commonly you'd use llama.cpp or vLLM to run models. Depending – again – on what hardware you choose. Nvidia, AMD and Apple all have individual requirements.
+**The Docker stack I composed does not include a service to run the LLM.** You'll need Docker installed first – see [Docker's install guide](https://docs.docker.com/engine/install/). Personally, I test different LLMs on a regular basis and don't want to have them entangled in this setup. You may choose differently. Commonly you'd use [llama.cpp](https://github.com/ggml-org/llama.cpp) or [vLLM](https://docs.vllm.ai/en/stable/deployment/docker/) to run models. Depending – again – on what hardware you choose. Nvidia, AMD and Apple all have individual requirements – each [GPU passthrough guide](https://docs.docker.com/desktop/gpu/) explains the specifics.
 
 ## Your privacy-first Open WebUI stack
 
@@ -238,13 +238,13 @@ The Open WebUI stack comes with integrated services including VPN, search, brows
 
 **This is a clean slate setup. No opinionated configurations or tools added. A starting point. Hook your LLM up, ask what tools the it can use to assist you and get building.** Open Terminal gives the agent a playground to create scripts that you can then use as tools for and in Open WebUI.
 
-- **Open WebUI** – Web-based interface for LLMs
-- **WireGuard VPN** – Secure tunnel for all external traffic
-- **SearXNG** – Privacy-focused search engine
-- **Playwright (incl. MCP)** – Browser automation for web loading
-- **pgvector** – PostgreSQL with vector extension for RAG
-- **Tika** – Content extraction service
-- **Open Terminal** – Web-based terminal access
+- **[Open WebUI](https://openwebui.com/)** – Web-based interface for LLMs
+- **[WireGuard](https://www.wireguard.com/)** – Secure tunnel for all external traffic
+- **[SearXNG](https://docs.searxng.org/)** – Privacy-focused search engine
+- **[Playwright](https://playwright.dev/) (incl. MCP)** – Browser automation for web loading
+- **[pgvector](https://github.com/pgvector/pgvector)** – PostgreSQL with vector extension for RAG
+- **[Tika](https://tika.apache.org/)** – Content extraction service
+- **[Open Terminal](https://github.com/open-webui/open-terminal)** – Web-based terminal access
 - **Automated Backups** – Scheduled volume backups with encryption
 
 #### Download the [Open WebUI stack on GitHub](https://github.com/philippjbauer)
@@ -367,7 +367,7 @@ services:
       - LLAMA_ARG_PORT=8080
       
       # Hugging Face model configuration
-      - HF_TOKEN=${HF_TOKEN}  # Set this in your .env file or export it
+      - HF_TOKEN=${HF_TOKEN}  # Set this in your .env file or export it – get one from [Hugging Face](https://huggingface.co/docs/hub/en/security-tokens)
       - LLAMA_ARG_HF_REPO=${HF_REPO:?LLAMA_ARG_HF_REPO is missing required value}
       - LLAMA_ARG_ALIAS=${LLAMA_ARG_ALIAS}
       - LLAMA_ARG_TEMP=${LLAMA_ARG_TEMP:-0.7}
@@ -498,7 +498,7 @@ services:
 HF_TOKEN="hf_[truncated]"
 
 # Active models
-HF_REPO="unsloth/Qwen3.6-35B-A3B-GGUF:Q8_0"
+HF_REPO="unsloth/Qwen3.6-35B-A3B-GGUF:Q8_0"  # Quantized on [Unsloth](https://unsloth.ai/)
 
 # Coding Tasks w/ Thinking
 LLAMA_ARG_ALIAS="Qwen3.6-35B-A3B"
