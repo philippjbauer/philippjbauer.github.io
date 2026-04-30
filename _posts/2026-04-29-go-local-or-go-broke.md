@@ -13,6 +13,8 @@ categories:
 lang: en
 translation_id: go-local-or-go-broke
 layout: posts
+image: /assets/posts/glogb/go-local-or-go-broke.jpg
+image_alt: "One last token for the slot-machine"
 ---
 
 ## Your coding agent just got more expensive
