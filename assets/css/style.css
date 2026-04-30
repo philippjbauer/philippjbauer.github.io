@@ -136,6 +136,7 @@ body {
 
 .post-hero .image {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
