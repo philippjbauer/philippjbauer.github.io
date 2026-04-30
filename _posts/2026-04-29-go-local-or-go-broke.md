@@ -166,7 +166,7 @@ Allow me to handwave a little bit 👋
 
 **If you used API pricing for continuous use, that single machine paid for itself in just over a month\*!**
 
-**You'll have control over your tools. No surprise changes in system messages. No dumbing down of tools during "peak" business hours.**
+And immediately you'll have control over your tools. Are insulated from surprise changes in system messages. And no one can dumb down your tools in the middle of your workday.
 
 <small>\*remember my handwaving!</small>
 
