@@ -64,7 +64,7 @@ Now imagine if OpenAI is not able to create a return for investors that look to 
 > ![Bilbo OpenAI looking at your most private data, thinking "Why Not?"](../assets/posts/glogb/bilibo-openai-data.jpg)\
 >  Why not? — Sam Altman
 
-## Local AI just leapt forward – what just changed
+## Local AI just leapt forward – what changed
 
 Over the last three years, other vendors have steadily kept up with OpenAI and Anthropic. **Today, small models match flagship model's capabilities from half a year ago, and run fast enough on consumer hardware.**
 
@@ -91,10 +91,10 @@ The second big change are the latest versions of Open WebUI. A replacement for O
 
 <blockquote>
  <img class="full-width" src="../assets/posts/glogb/open-webui-demo.jpg" alt="Open WebUI Demo" /><br>
- What is AGI, if not an LLM on a scheduler?
+ What is AGI, if not an LLM on a schedule?
 </blockquote>
 
-Their license should be read carefully though before you consider commercial use.
+<small>(Their [license](https://github.com/open-webui/open-webui?tab=License-1-ov-file) should be read carefully though before you consider commercial use.)</small>
 
 ### Cut the bloat, keep the smarts
 
@@ -102,7 +102,7 @@ What happens when the people that sell you tokens, give you a tool that consumes
 
 **They make sure it needs as many as possible.**
 
-Every instruction, every gate to not break the user's system, everything that was put in place for people who want to YOLO their new SaaS – all of that are tokens YOU pay for. If you need it or not.
+Every instruction, every gate to not break the user's system, everything that was put in place for people who want to YOLO their next SaaS – all of that are tokens YOU pay to process too! If you need them or not.
 
 And then your custom agents' behavior changes because of an update to those instructions. Incredibly frustrating when you are used to deterministic tools.
 
