@@ -11,7 +11,6 @@ footer, one stylesheet, and the dark mode toggle.
 | `/` | Profile page: expertise, experience, video courses, speaking, writing, contact |
 | `/blog/` | Blog index: latest article plus the archive |
 | `/blog/<slug>/` | One article |
-| `/blog/about/` | Short personal bio, the blog's own about page |
 | `/blog/feed.xml` | Atom feed |
 | `/404.html` | Not found page, GitHub Pages serves it |
 | `/resume.pdf` | Résumé, generated from `resume.html` |
