@@ -1169,3 +1169,20 @@ section[id] {
     grid-template-columns: 1fr;
   }
 }
+/* The blog's sign-off column: portrait a third, copy two thirds. Reversed against the
+   landing page's About section, where the prose leads and the portrait trails. */
+.who-writes-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 3rem;
+  align-items: start;
+}
+@media (max-width: 620px) {
+  .who-writes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .who-writes-grid .about-portrait {
+    max-width: 280px;
+  }
+}
