@@ -1177,6 +1177,10 @@ section[id] {
   gap: 3rem;
   align-items: start;
 }
+/* Balanced vertically rather than hanging under the section's top padding. */
+.who-writes-copy {
+  align-self: center;
+}
 /* Held back to 240px, centred in its column, and dropped to the bottom of the row. */
 .who-writes-grid .about-portrait {
   align-self: end;
@@ -1189,6 +1193,11 @@ section[id] {
 @media (min-width: 621px) {
   .sign-off {
     padding-bottom: 0;
+  }
+  /* The band carries top padding only, so its centre sits 1.9rem above the row centre. Grid
+     centring splits an asymmetric margin in half, hence the full 3.8rem to lift by 1.9rem. */
+  .who-writes-copy {
+    margin-top: -3.8rem;
   }
 }
 @media (max-width: 620px) {
