@@ -1169,6 +1169,14 @@ section[id] {
     grid-template-columns: 1fr;
   }
 }
+/* The latest article stands in for the blog index's hero, which makes its card title the
+   page's h1. It keeps the card's proportions, so it sits between the card's h3 size and the
+   section h2 scale instead of taking the page h1 scale. */
+.video-feature .video-meta h1 {
+  font-size: clamp(1.6rem, 3.5vw, 2.05rem);
+  line-height: 1.1;
+  margin: 0;
+}
 /* The blog's sign-off column: portrait a third, copy two thirds. Reversed against the
    landing page's About section, where the prose leads and the portrait trails. */
 .who-writes-grid {
@@ -1180,6 +1188,10 @@ section[id] {
 /* Balanced vertically rather than hanging under the section's top padding. */
 .who-writes-copy {
   align-self: center;
+}
+/* The lede's own bottom margin is the whole gap to the call-to-action row. */
+.who-writes-copy .hero-actions {
+  margin-top: 0;
 }
 /* Held back to 240px, centred in its column, and dropped to the bottom of the row. */
 .who-writes-grid .about-portrait {

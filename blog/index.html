@@ -8,26 +8,10 @@ image_alt: "Philipp Bauer, senior software and AI architect"
 ---
 <main>
 
-  <section class="hero">
-    <div class="container">
-      <p class="eyebrow">Writing</p>
-      <h1>The Blog</h1>
-      <p class="lede">
-        Articles on AI, infrastructure, and software engineering. The research runs on my
-        own hardware; the text is written by hand.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="/#contact">Get in touch</a>
-        <a class="btn" href="/blog/feed.xml" type="application/rss+xml">RSS feed</a>
-      </div>
-    </div>
-  </section>
-
   {%- assign latest = site.posts | first %}
   {%- if latest %}
   <section class="section alt">
     <div class="container">
-      <h2>Latest article</h2>
       <!-- Course-card geometry, reused: the archive reads as the same kind of artifact as
            the video courses on the profile page, with no second card style to maintain. -->
       <a class="video-card video-feature" href="{{ latest.url }}">
@@ -36,20 +20,15 @@ image_alt: "Philipp Bauer, senior software and AI architect"
         {%- endif %}
         <div class="video-meta">
           <p class="eyebrow">{{ latest.date | date: "%B %-d, %Y" }}</p>
-          <h3>{{ latest.title }}</h3>
+          <h1>{{ latest.title }}</h1>
           <p>{{ latest.description }}</p>
           <p class="video-when">{{ latest.categories | join: " &middot; " }}</p>
           <span class="card-link">Read the article &rarr;</span>
         </div>
       </a>
-    </div>
-  </section>
-  {%- endif %}
 
-  {%- if site.posts.size > 1 %}
-  <section class="section">
-    <div class="container">
-      <h2>All articles</h2>
+      {%- if site.posts.size > 1 %}
+      <h2 class="subhead">All articles</h2>
       <div class="engagement-grid">
         {%- for post in site.posts offset:1 %}
         <a class="engagement-card" href="{{ post.url }}">
@@ -60,11 +39,12 @@ image_alt: "Philipp Bauer, senior software and AI architect"
         </a>
         {%- endfor %}
       </div>
+      {%- endif %}
     </div>
   </section>
   {%- endif %}
 
-  <section class="section alt sign-off">
+  <section class="section sign-off">
     <div class="container">
       <div class="who-writes-grid">
         <figure class="about-portrait">
@@ -83,6 +63,10 @@ image_alt: "Philipp Bauer, senior software and AI architect"
             architecture work. The full record &ndash; experience, video courses, speaking &ndash; is on
             the <a href="/#experience">profile page</a>.
           </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/#contact">Get in touch</a>
+            <a class="btn" href="/blog/feed.xml" type="application/rss+xml">RSS feed</a>
+          </div>
         </div>
       </div>
     </div>
