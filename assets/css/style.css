@@ -1177,11 +1177,19 @@ section[id] {
   gap: 3rem;
   align-items: start;
 }
-/* Held back to 240px and dropped to the bottom of the row, so the portrait sits flush with
-   the container edge below the copy instead of level with the heading. */
+/* Held back to 240px, centred in its column, and dropped to the bottom of the row. */
 .who-writes-grid .about-portrait {
   align-self: end;
+  justify-self: center;
   max-width: 240px;
+}
+/* The .section padding is what kept the portrait off the band's lower edge. Dropping it here
+   puts the image bottom on the section edge. Mobile hides the figure, so the band keeps its
+   normal rhythm there. */
+@media (min-width: 621px) {
+  .sign-off {
+    padding-bottom: 0;
+  }
 }
 @media (max-width: 620px) {
   .who-writes-grid {
