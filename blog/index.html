@@ -66,22 +66,24 @@ image_alt: "Philipp Bauer, senior software and AI architect"
 
   <section class="section alt">
     <div class="container">
-      <h2>Who writes this</h2>
       <div class="who-writes-grid">
         <figure class="about-portrait">
-          <!-- Rendered about a third of the container wide, so the 640 source covers a
-               retina display and the 864px master stays the fallback. -->
+          <!-- Rendered 240 CSS px wide: the 320 file is the 1x pick, the 640 the 2x pick,
+               and the 864px master stays the fallback. -->
           <picture>
-            <source type="image/avif" srcset="/assets/img/portrait-320.avif 320w, /assets/img/portrait-640.avif 640w" sizes="(max-width: 620px) 100vw, 324px">
-            <source type="image/webp" srcset="/assets/img/portrait-320.webp 320w, /assets/img/portrait-640.webp 640w" sizes="(max-width: 620px) 100vw, 324px">
+            <source type="image/avif" srcset="/assets/img/portrait-320.avif 320w, /assets/img/portrait-640.avif 640w" sizes="240px">
+            <source type="image/webp" srcset="/assets/img/portrait-320.webp 320w, /assets/img/portrait-640.webp 640w" sizes="240px">
             <img src="/assets/img/portrait.webp" alt="Philipp Bauer" width="864" height="1024" loading="lazy" decoding="async">
           </picture>
         </figure>
-        <p class="section-lede">
-          I am a senior software and AI architect, currently looking for principal-level AI
-          architecture work. The full record &ndash; experience, video courses, speaking &ndash; is on
-          the <a href="/#experience">profile page</a>.
-        </p>
+        <div>
+          <h2>Who writes this</h2>
+          <p class="section-lede">
+            I am a senior software and AI architect, currently looking for principal-level AI
+            architecture work. The full record &ndash; experience, video courses, speaking &ndash; is on
+            the <a href="/#experience">profile page</a>.
+          </p>
+        </div>
       </div>
     </div>
   </section>

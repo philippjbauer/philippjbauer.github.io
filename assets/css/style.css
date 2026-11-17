@@ -1177,12 +1177,17 @@ section[id] {
   gap: 3rem;
   align-items: start;
 }
+/* Held back to 240px and dropped to the bottom of the row, so the portrait sits flush with
+   the container edge below the copy instead of level with the heading. */
+.who-writes-grid .about-portrait {
+  align-self: end;
+  max-width: 240px;
+}
 @media (max-width: 620px) {
   .who-writes-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
   .who-writes-grid .about-portrait {
-    max-width: 280px;
+    display: none;
   }
 }
