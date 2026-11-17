@@ -1,7 +1,6 @@
 ---
 title: "The AI Infrastructure Bubble – What Actually Gets Built"
 date: 2026-03-30
-permalink: /the-ai-infrastructure-bubble/
 description: "Hundreds of gigawatts of data center capacity have been announced worldwide, but less than 3% is actually under construction. A look at the gap between AI infrastructure headlines and reality."
 categories:
   - AI
@@ -9,7 +8,6 @@ categories:
   - data centers
   - power
   - economics
-layout: posts
 image: /assets/posts/the-ai-infrastructure-bubble.jpg
 image_alt: "AI Infrastructure Bubble illustration"
 ---

@@ -1,7 +1,9 @@
 ---
-layout: posts
+layout: page
 title: Hi – I'm Philipp.
-permalink: /about/
+permalink: /blog/about/
+section: blog
+description: "Who writes this blog: a software and AI architect who cut his teeth on the early internet and now builds LLM systems for a living."
 ---
 
 A millennial who got to see technology evolve from 233MHz CPUs and MBs of RAM to 32-core 5GHz CPU/GPU chips with 100+ GBs of RAM. From Win 95 to macOS 26. Diablo 1 to Baldur's Gate 3. Who cut his teeth on the early internet and CSS hacks for Internet Explorer 5. Proud student of an old Linux-head CS teacher who had his students build the fastest line-following robot they could come up with. Also, Linux-head (vampire rules apply?). 

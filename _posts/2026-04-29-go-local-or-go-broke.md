@@ -1,7 +1,6 @@
 ---
 title: "Go Local or Go Broke!"
 date: 2026-04-29
-permalink: /go-local-or-go-broke/
 description: "How subscription-based AI is becoming unsustainable and why running open-source models locally on your own hardware is the smarter choice for independence, privacy, and cost savings."
 categories:
   - AI
@@ -12,7 +11,6 @@ categories:
 
 lang: en
 translation_id: go-local-or-go-broke
-layout: posts
 image: /assets/posts/glogb/go-local-or-go-broke.jpg
 image_alt: "One last token for the slot-machine"
 ---
@@ -48,7 +46,7 @@ The first phase – the one we're slowly departing from – hook as many people 
 
 After people are familiar with the service and have become dependent, **they jack up the prices for the pro plans, reduce the quality and features of the entry plans and add advertisements for free plans**. The pricing for enterprise and API pricing will remain largely stable, paying for the subsidies and the subscription plans.
 
-> ![GitHub Copilot Multiplier increases](../assets/posts/glogb/gh-copilot-multiplier-increases.png)\
+> ![GitHub Copilot Multiplier increases](/assets/posts/glogb/gh-copilot-multiplier-increases.png)\
 > Source: [GitHub Copilot Billing Docs](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing#model-multipliers-for-annual-copilot-pro-and-copilot-pro-subscribers)
 
 If you paid your Claude or Copilot usage in API pricing you'd have a $2,000+ hole in your pocket. Each month. You don't feel it because of the tens of billions flowing in from investors.
@@ -67,7 +65,7 @@ Now imagine if OpenAI is not able to create a return for investors that look to 
 
 **Who'll end up owning you?**
 
-> ![Bilbo OpenAI looking at your most private data, thinking "Why Not?"](../assets/posts/glogb/bilibo-openai-data.jpg)\
+> ![Bilbo OpenAI looking at your most private data, thinking "Why Not?"](/assets/posts/glogb/bilibo-openai-data.jpg)\
 >  Why not? — Sam Altman
 
 ## Local AI just leapt forward – what changed
@@ -85,7 +83,7 @@ Replacing its very capable predecessor, [Qwen3.6](https://github.com/QwenLM/Qwen
 But the headline for me, **a dense 27B model competing with Claude Opus 4.5!**
 
 <blockquote>
- <img src="../assets/posts/glogb/qwen3_6-benchmarks-condensed.jpg" alt="Qwen3.6 Benchmarks" /><br>
+ <img src="/assets/posts/glogb/qwen3_6-benchmarks-condensed.jpg" alt="Qwen3.6 Benchmarks" /><br>
 — Source: Alibaba / Qwen
 </blockquote>
 
@@ -96,7 +94,7 @@ The second big change are the latest versions of Open WebUI. A replacement for O
 **Especially the automations** – prompts that are executed at configured intervals – are enabling some interesting use cases without needing to roll your own system.
 
 <blockquote>
- <img src="../assets/posts/glogb/open-webui-demo.jpg" alt="Open WebUI Demo" /><br>
+ <img src="/assets/posts/glogb/open-webui-demo.jpg" alt="Open WebUI Demo" /><br>
  What is AGI, if not an LLM on a schedule?
 </blockquote>
 
@@ -116,7 +114,7 @@ But was it an update to your agent's harness? Was it because the same model is s
 
 That's where bare-bones coding agent harnesses come in. Unopinionated, expandable, easy on the tokens. Projects like – or based on – [Pi Coding Agent](https://pi.dev).
 
-> ![Pi Coding Agent](../assets/posts/glogb/pi-screenshot.png)\
+> ![Pi Coding Agent](/assets/posts/glogb/pi-screenshot.png)\
 > Pi Coding Agent in Docker container
 
 Pi is running on a terminal, has a small footprint and can be added to existing containerized dev environments.
@@ -135,7 +133,7 @@ In the Dec. 2024 paper ["Densing Law of LLMs"](https://arxiv.org/abs/2412.04315)
 
 See the following example of a few select coding benchmarks across three generations of models. **Within about seven months, an open-source model is in a head-to-head race with Claude Sonnet 4.5. But not only that – it's likely only 1/10th of the frontier-model's size!**
 
-<iframe src="../assets/posts/glogb/coding_benchmarks_comparison.html" width="100%" height="620" title="Coding benchmarks comparison" style="border: none; margin-bottom: 1rem;"></iframe>
+<iframe src="/assets/posts/glogb/coding_benchmarks_comparison.html" width="100%" height="620" title="Coding benchmarks comparison" style="border: none; margin-bottom: 1rem;"></iframe>
 
 ### Hardware that pays for itself in a month
 
@@ -143,7 +141,7 @@ See the following example of a few select coding benchmarks across three generat
 
 Look at Claude Sonnet 4.5 API costs [on OpenRouter](https://openrouter.ai/anthropic/claude-sonnet-4.5): `$3/M tokens in` / `$15/M tokens out` (in April '26)
 
-> ![Claude Sonnet 4.5 Pricing on OpenRouter](../assets/posts/glogb/claude-sonnet-4_5-pricing.png)
+> ![Claude Sonnet 4.5 Pricing on OpenRouter](/assets/posts/glogb/claude-sonnet-4_5-pricing.png)
 
 Get the napkin, let's do some math:
 
@@ -351,7 +349,7 @@ BACKUP_ENCRYPTION_PASSPHRASE=your-encryption-passphrase
 
 Let's assume you have an AMD Strix Halo machine set up and the GPU configured to be usable by Docker. **The following demonstrates a tested configuration to run the aforementioned Qwen3.6 35B A3B model on this machine.**
 
-> ![AMD Strix Halo btop](../assets/posts/glogb/btop-screenshot.jpg)\
+> ![AMD Strix Halo btop](/assets/posts/glogb/btop-screenshot.jpg)\
 > `btop` showing current CPU / GPU usage
 
 My personal setup uses 96/128G for VRAM and the remaining 32G RAM are split between Docker host VMs. One of them hosts the llama.cpp server and several other loads. You can see here that **the model uses about 40G VRAM with its full context size of 256k tokens.**
