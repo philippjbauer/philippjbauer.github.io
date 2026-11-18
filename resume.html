@@ -1,280 +1,547 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
-  Source for resume.pdf. Regenerate with: python3 build_resume.py
-  Layout rules come from RESEARCH.md section 6 (ATS and AI screening): single column,
-  standard headings, no text boxes or graphics, contact in the body, standard font,
-  acronyms spelled out on first mention. Keep the wording in step with index.html and
-  LinkedIn: same titles, same dates, 15+ years everywhere.
-  Wording mirrors the vocabulary of staff-level agentic-AI platform roles where the work
-  genuinely matches (RESEARCH.md 6). Anything the record does not support stays out: no
-  observability or SLO claims, no invented accuracy or cost figures.
-  Two pages by construction. Rebuild and check the page count after any wording change:
-  build_resume.py prints nothing about it, so use pymupdf (page_count, lowest text y).
+  Résumé source. Standalone on purpose: no Jekyll front matter, no site CSS, no web fonts,
+  so `python3 build_resume.py` renders exactly what a reader sees at /resume.html and what
+  an ATS extracts from /resume.pdf. Sizing is in pt because the page's first job is a
+  printed sheet. Decoration comes from borders, never background fills: the PDF is built
+  with print_background off, which keeps the text layer clean for parsers.
 -->
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Philipp Bauer &ndash; Resume</title>
-<meta name="robots" content="noindex">
-<style>
-  @page {
-    size: Letter;
-    margin: 0.5in 0.65in;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  html {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  body {
-    margin: 0;
-    font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
-    font-size: 9.9pt;
-    line-height: 1.29;
-    color: #16181a;
-    hyphens: none;
-    text-align: left;
-  }
-  @media screen {
-    html {
-      background: #e9eaec;
-    }
-    body {
-      max-width: 8.5in;
-      margin: 0 auto;
-      padding: 0.5in 0.65in;
-      background: #fff;
-    }
-  }
-  h1 {
-    margin: 0;
-    font-size: 21pt;
-    line-height: 1.08;
-    letter-spacing: -0.012em;
-  }
-  .headline {
-    margin: 0.16rem 0 0;
-    font-size: 11.5pt;
-    font-weight: bold;
-    color: #8a3f20;
-  }
-  .contact {
-    margin: 0.36rem 0 0;
-    font-size: 9.3pt;
-    color: #45494d;
-  }
-  .logistics {
-    margin: 0.14rem 0 0;
-    font-size: 9.3pt;
-    color: #45494d;
-  }
-  header {
-    padding-bottom: 0.4rem;
-    border-bottom: 1.5pt solid #8a3f20;
-  }
-  h2 {
-    margin: 0.76rem 0 0.28rem;
-    font-size: 9.7pt;
-    font-weight: bold;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: #8a3f20;
-    padding-bottom: 0.12rem;
-    border-bottom: 0.75pt solid #c9cdd1;
-    break-after: avoid;
-  }
-  p {
-    margin: 0;
-  }
-  strong {
-    color: #16181a;
-  }
-  .role {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-top: 0.54rem;
-    break-after: avoid;
-  }
-  h3 {
-    margin: 0;
-    font-size: 10.6pt;
-    break-after: avoid;
-  }
-  .dates {
-    white-space: nowrap;
-    font-size: 9.4pt;
-    color: #45494d;
-    font-variant-numeric: tabular-nums;
-  }
-  .org {
-    margin: 0.06rem 0 0;
-    font-style: italic;
-    font-size: 9.4pt;
-    color: #45494d;
-    break-after: avoid;
-  }
-  ul {
-    margin: 0.28rem 0 0;
-    padding-left: 1rem;
-  }
-  li {
-    margin: 0 0 0.16rem;
-    break-inside: avoid;
-  }
-  li:last-child {
-    margin-bottom: 0;
-  }
-  .gap {
-    margin-top: 0.54rem;
-    break-inside: avoid;
-  }
-  .skills p {
-    margin: 0 0 0.18rem;
-    padding-left: 0.9rem;
-    text-indent: -0.9rem;
-  }
-  .plain-list {
-    margin: 0.28rem 0 0;
-    padding-left: 1rem;
-  }
-  .plain-list li {
-    margin: 0 0 0.17rem;
-  }
-  .note {
-    font-size: 9.4pt;
-    color: #45494d;
-    margin-top: 0.22rem;
-  }
-  a {
-    color: #16181a;
-    text-decoration: none;
-  }
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <title>Philipp Bauer &ndash; R&eacute;sum&eacute;: staff/principal engineer, agentic AI platforms</title>
+    <meta
+      name="description"
+      content="R&eacute;sum&eacute; of Philipp Bauer, senior software and AI architect: 15+ years in enterprise systems, agentic AI, retrieval with citations, LLM pipelines on client-owned hardware, C#/.NET and Python, Azure."
+    />
+    <style>
+      :root {
+        --ink: #1c1a17;
+        --muted: #5c574f;
+        --accent: #a84a22;
+        --rule: #d9d3c8;
+        --paper: #ffffff;
+        --desk: #efece6;
+      }
 
-<header>
-  <h1>Philipp Bauer</h1>
-  <p class="headline">Senior Software &amp; AI Architect</p>
-  <p class="contact">
-    Mountain View, Arkansas, USA &middot;&nbsp;philippbauer.org &middot;&nbsp;hello@philippbauer.org
-    &middot;&nbsp;linkedin.com/in/philippjbauer &middot;&nbsp;github.com/philippjbauer
-  </p>
-  <p class="logistics">
-    Seeking staff or principal software engineer and AI architect roles: agentic AI
-    platforms, enterprise AI integration, forward deployed engineering &middot;&nbsp;Authorized to
-    work in the US (permanent resident) &middot;&nbsp;Open to remote, willing to relocate
-    &middot;&nbsp;Available from early 2027
-  </p>
-</header>
+      @page {
+        size: Letter;
+        margin: 0.5in 0.6in;
+      }
 
-<h2>Summary</h2>
-<p>
-  Senior software and AI architect with 15+ years building and operating enterprise systems in
-  C# / .NET and Python on Azure, mostly in HIPAA and SOC 2 regulated environments: debt
-  collection, health and dental insurance administration, media production. The last few years went
-  into AI that runs in production: agentic and multi-stage large language model (LLM) systems,
-  retrieval-augmented generation (RAG) that cites its sources, trained computer vision models, and
-  speech transcription. They run on graphics processing unit (GPU) hardware the client owns or in
-  Azure, and the data stays inside the customer's network either way. Sets standards other people
-  build to, from a domain-driven design adoption sold to leadership to coding agents that must verify
-  their own output, and teaches the same material: nine published courses, conference sessions since
-  2023, CODE Magazine author.
-</p>
+      * {
+        box-sizing: border-box;
+      }
 
-<h2>Skills</h2>
-<div class="skills">
-  <p><strong>Programming:</strong> C# / .NET through .NET 10, Python, TypeScript and JavaScript, SQL</p>
-  <p><strong>AI and machine learning:</strong> agentic and multi-stage LLM systems, LLM integration and fine-tuning (commercial APIs and open-source models), Semantic Kernel, retrieval-augmented generation (RAG), prompt engineering, vector search and semantic retrieval, evaluating model output through human review and automated checks, Whisper speech transcription, Detectron2 instance segmentation</p>
-  <p><strong>Architecture:</strong> domain-driven design (DDD), multi-tenant platforms, cloud-native microservices, event-driven architecture, distributed systems, API design, GPU-accelerated and serverless processing pipelines</p>
-  <p><strong>Cloud and DevOps:</strong> Azure, AWS, Azure Container Apps and Kubernetes, infrastructure as code in Bicep, continuous integration and delivery (CI/CD)</p>
-  <p><strong>Data:</strong> MSSQL and Azure SQL, MySQL, MongoDB, Redis, Cosmos DB, vector stores for embeddings</p>
-  <p><strong>Frontend:</strong> Blazor, Angular, React, Vue, .NET MAUI, HTML and CSS, accessible markup (WCAG 2.2 contrast, keyboard navigation, semantic headings)</p>
-  <p><strong>Regulated environments:</strong> HIPAA, SOC 2, deployments on client-owned hardware with no path to the public internet</p>
-  <p><strong>Spoken:</strong> German (native), English</p>
-</div>
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
 
-<h2>Work Experience</h2>
+      body {
+        margin: 0;
+        background: var(--desk);
+        color: var(--ink);
+        font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.45;
+      }
 
-<div class="role">
-  <h3>Senior Software &amp; AI Architect</h3>
-  <p class="dates">2019 &ndash; present</p>
-</div>
-<p class="org">CODE Group / EPS Software &middot; Remote &middot; joined 2019 as Senior Software Developer</p>
-<ul>
-  <li><strong>Built a meeting-intelligence platform end to end</strong>: multi-tenant, domain-driven, distributed, with serverless media processing, GPU-accelerated speech transcription, and a conversational layer that answers questions about the recordings from hybrid lexical and vector retrieval and cites the transcript passage behind each answer. Provisioned in Bicep, in daily use by our own teams, live with a partner organization.</li>
-  <li><strong>Right-sized the infrastructure twice:</strong> moved off Kubernetes to Azure Container Apps once the workloads proved not to need an orchestrator of that size, and made the environment deploy either in Azure or fully containerized on client-owned hardware, for tenants whose recordings cannot legally leave the building.</li>
-  <li><strong>Automated intake of legally sensitive mail:</strong> a document processing system in .NET 10 on Semantic Kernel, with a multi-stage chain of LLM and computer vision classification steps. Optical character recognition (OCR), categorization, and demographic extraction on 200&ndash;300 pieces of consumer mail a day for a debt collection agency, entirely on-premises on a Proxmox host with Nvidia RTX PRO 6000 GPUs, no path to the public internet, behind an ASP.NET Core review UI with a human on every classification. Per-document review time fell 80&ndash;90%.</li>
-  <li><strong>Run delivery work through a containerized coding agent:</strong> a dev container where the agent writes the change, runs the tests, and must pass them before I review the diff; published as a CODE Presents course.</li>
-  <li><strong>Recovered 25+ years of undocumented insurance business logic</strong> from a legacy Visual FoxPro platform (roughly 1.2 million lines, 350 tables) out of claims and billing data alone, with about 22,000 lines of forensic SQL reconciling legacy and modern invoices line by line. Those tax, fee, stop-loss, and eligibility rules drove a .NET 6 and Azure rebuild for a health and dental third-party administrator (TPA), and the comparison surfaced ledger discrepancies that were a regulatory red flag in their own right.</li>
-  <li><strong>Sold that client's leadership on domain-driven design</strong> and sliced the migration so later slices would not recreate a big ball of mud. Billing went first because it was both the largest reliability drain and the largest source of manual error: the insurer lost roughly a day a week reconciling disparate legacy systems by hand.</li>
-  <li><strong>Built a wound-measurement system from iOS capture to trained model:</strong> a .NET MAUI iOS app that standardizes capture with ARKit surface detection and haptic distance feedback; a Python pipeline that rebuilds the wound surface by segmentation and photogrammetry and computes depth, volume, and surface area in a FastAPI worker; and a trained Detectron2 Mask R-CNN segmentation model for wound boundaries, served containerized on Kubernetes in Azure AI Foundry.</li>
-  <li><strong>Led a five-engineer team</strong> alongside client-side engineers and project managers, and set up their training, including DDD sessions run with third-party instructors.</li>
-</ul>
+      /* The sheet on screen. In print the page margins do this work, so the frame goes away. */
+      .sheet {
+        max-width: 8.5in;
+        margin: 1.25rem auto 2.5rem;
+        padding: 0.55in 0.65in;
+        background: var(--paper);
+        border: 1px solid var(--rule);
+        box-shadow: 0 2px 14px rgba(28, 26, 23, 0.09);
+      }
 
-<div class="role">
-  <h3>Freelancer &amp; Consultant</h3>
-  <p class="dates">2016 &ndash; 2019</p>
-</div>
-<p class="org">USA</p>
-<ul>
-  <li><strong>Relocated from Germany to the US</strong>; freelance full-stack development, server administration, and network management for healthcare, commerce, and manufacturing clients.</li>
-  <li><strong>Contracted for CODE</strong> on a fleet, tire, and rim inventory and tracking solution for a global tire manufacturer.</li>
-</ul>
+      /* ---------- Header ---------- */
+      .resume-head {
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 9pt;
+        margin-bottom: 9pt;
+      }
 
-<div class="role">
-  <h3>Web Designer &amp; Developer</h3>
-  <p class="dates">2015 &ndash; 2016</p>
-</div>
-<p class="org">Büro Oberhoff &middot; Hamburg, Germany</p>
-<ul>
-  <li><strong>Followed one of the owners of Signalfabrik</strong> through that firm's split and carried on the existing German client projects until the move to the US.</li>
-</ul>
+      h1 {
+        font-family: "Fjord One", Georgia, "Liberation Serif", serif;
+        font-weight: 400;
+        font-size: 25pt;
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        margin: 0;
+      }
 
-<div class="role">
-  <h3>Web Designer &amp; Developer</h3>
-  <p class="dates">2012 &ndash; 2015</p>
-</div>
-<p class="org">Signalfabrik &middot; Oldenburg, Germany</p>
-<ul>
-  <li><strong>Ran the full project lifecycle on small teams:</strong> requirements, proposals, design, development, deployment, on WordPress and TYPO3 sites and the web servers behind them.</li>
-  <li><strong>Client work included</strong> PartFactory, a B2B parts platform, plus public sites for a medical-supplement maker, a medical-device supplier, and a nozzle supplier.</li>
-</ul>
+      .role {
+        font-family: "Fjord One", Georgia, "Liberation Serif", serif;
+        font-size: 12.5pt;
+        line-height: 1.3;
+        color: var(--accent);
+        margin: 4pt 0 0;
+      }
 
-<div class="gap">
-  <div class="role">
-    <h3>Travel and relocation</h3>
-    <p class="dates">2011 &ndash; 2012</p>
-  </div>
-  <p>Toured Germany on a bicycle built for the purpose, then spent three months in the US before starting at Signalfabrik.</p>
-</div>
+      .contact,
+      .logistics {
+        margin: 5pt 0 0;
+        font-size: 9.5pt;
+        color: var(--muted);
+      }
 
-<h2>Speaking &amp; Publications</h2>
-<p class="note">
-  The client work above is proprietary, so the courses, sessions, and articles below are the public
-  record of the same stack.
-</p>
-<ul class="plain-list">
-  <li><strong>Conference speaker</strong>: DEVintersection / next.GenAI 2023, 2024, and 2025 (sessions, a workshop, and a panel on AI-assisted development), plus CODE Group's <em>State of AI</em> series since 2023 (speaker profile: devintersection.com).</li>
-  <li><strong>Nine published video courses</strong> on the CODE Magazine channel: <em>Closing the Development Loop with Containerized Agents</em> (Nov 2026), <em>Build Intelligent Agent Systems with Semantic Kernel</em> (Dec 2025), <em>Vibe Coding Done Right</em> (May 2025), and the four-part <em>Own Your AI</em> series on running LLMs on your own hardware (Jun 2026).</li>
-  <li><strong>Contributing author</strong>, CODE Magazine: "You're Missing Out on Open-Source LLMs!", March/April 2024 issue.</li>
-  <li><strong>Blog</strong>, philippbauer.org/blog/: "Go Local or Go Broke!" (Apr 2026) and "The AI Infrastructure Bubble &ndash; What Actually Gets Built" (Mar 2026), on what enterprise AI costs and who should own it.</li>
-</ul>
+      .logistics {
+        font-size: 9pt;
+      }
 
-<h2>Education</h2>
-<div class="role">
-  <h3>Bildungszentrum für Technik und Gestaltung &middot; Oldenburg, Germany</h3>
-  <p class="dates">2005 &ndash; 2011</p>
-</div>
-<p>
-  Media Designer, Digital and Print (Mediengestalter Digital und Print, a state-recognized German
-  apprenticeship), 2011, and technical diploma in computer science (Fachabitur / Technische
-  Hochschulreife), 2008, university-entrance qualified. Where a US posting asks for a computing
-  bachelor's, 15+ years of practical experience stands in.
-</p>
+      .contact a {
+        color: var(--muted);
+      }
 
-</body>
+      /* Each contact item is one unbreakable unit: at phone widths the line wraps between
+         items rather than through the middle of a URL. */
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .ci {
+        white-space: nowrap;
+      }
+
+      .ci:not(:last-child)::after {
+        content: "\00b7";
+        color: var(--rule);
+        margin: 0 5pt;
+      }
+
+      .sep {
+        color: var(--rule);
+        padding: 0 3pt;
+      }
+
+      /* Keep short identity phrases from breaking mid-phrase in the header. */
+      .nb {
+        white-space: nowrap;
+      }
+
+      /* ---------- Sections ---------- */
+      h2 {
+        font-family: "Fjord One", Georgia, "Liberation Serif", serif;
+        font-weight: 400;
+        font-size: 11pt;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 3pt;
+        margin: 10.5pt 0 6.5pt;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      h2:first-of-type {
+        margin-top: 0;
+      }
+
+      .summary {
+        margin: 0;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--rule);
+        /* Long profile URLs have to break inside at phone widths instead of widening the page. */
+        overflow-wrap: anywhere;
+      }
+
+      a:hover,
+      a:focus-visible {
+        border-bottom-color: var(--accent);
+      }
+
+      /* ---------- Jobs ---------- */
+      .job + .job {
+        margin-top: 9pt;
+      }
+
+      .job-head {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0 12pt;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      h3 {
+        font-size: 11pt;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .job-when {
+        margin: 0;
+        font-size: 9.5pt;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .job-org {
+        break-after: avoid;
+        page-break-after: avoid;
+        margin: 1pt 0 5pt;
+        font-size: 10pt;
+        color: var(--muted);
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 14pt;
+      }
+
+      li {
+        margin: 0 0 2.6pt;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      li li,
+      ul ul {
+        margin-top: 3pt;
+      }
+
+      strong {
+        font-weight: 650;
+      }
+
+      /* ---------- Skills / stacks ---------- */
+      dl {
+        margin: 0;
+      }
+
+      .stack div {
+        display: grid;
+        grid-template-columns: 1.35in 1fr;
+        gap: 0 10pt;
+        margin-bottom: 2.8pt;
+        break-inside: avoid;
+      }
+
+      dt {
+        font-weight: 600;
+        font-size: 9.5pt;
+      }
+
+      dd {
+        margin: 0;
+      }
+
+      /* ---------- Public work ---------- */
+      .work-item {
+        margin-bottom: 8pt;
+      }
+
+      .work-item:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .work-item p {
+        margin: 0 0 3pt;
+      }
+
+      .work-when {
+        color: var(--muted);
+        font-size: 9.5pt;
+      }
+
+      /* ---------- Toolbar (screen only) ---------- */
+      .toolbar {
+        max-width: 8.5in;
+        margin: 0 auto;
+        padding: 0.9rem 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.86rem;
+        color: var(--muted);
+      }
+
+      .toolbar-actions {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border: 1px solid var(--rule);
+        background: var(--paper);
+        color: var(--ink);
+        border-radius: 8px;
+        padding: 0.34rem 0.7rem;
+        text-decoration: none;
+      }
+
+      .btn:hover,
+      .btn:focus-visible {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      @media (max-width: 40rem) {
+        body {
+          font-size: 10.5pt;
+        }
+
+        .sheet {
+          margin: 0.75rem 0 1.5rem;
+          padding: 26px 20px;
+          border-left: 0;
+          border-right: 0;
+          box-shadow: none;
+        }
+
+        .toolbar {
+          padding: 0.75rem 1rem 0;
+        }
+
+        h1 {
+          font-size: 21pt;
+        }
+
+        .role {
+          font-size: 11.5pt;
+        }
+
+        .job-head {
+          display: block;
+        }
+
+        .job-when {
+          margin-top: 1pt;
+        }
+
+        .stack div {
+          grid-template-columns: 1fr;
+          gap: 0;
+          margin-bottom: 6pt;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          font-size: 9.6pt;
+          line-height: 1.34;
+        }
+
+        .sheet {
+          max-width: none;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          box-shadow: none;
+        }
+
+        .screen-only {
+          display: none !important;
+        }
+
+        a {
+          color: var(--ink);
+          border-bottom: 0;
+        }
+
+        .role {
+          color: var(--accent);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="toolbar screen-only">
+      <a href="/">&larr; Back to philippbauer.org</a>
+      <span class="toolbar-actions">
+        <a class="btn" href="/resume.pdf" type="application/pdf" download>Download PDF</a>
+        <a class="btn" href="#" onclick="window.print();return false;">Print this page</a>
+      </span>
+    </div>
+
+    <main class="sheet">
+      <header class="resume-head">
+        <h1>Philipp Bauer</h1>
+        <p class="role">Senior Software &amp; AI Architect &middot; agentic AI systems that ship to production</p>
+        <p class="contact">
+          <span class="ci">Mountain View, Arkansas</span>
+          <span class="ci"><a href="mailto:hello@philippbauer.org">hello@philippbauer.org</a></span>
+          <span class="ci"><a href="https://philippbauer.org">philippbauer.org</a></span>
+          <span class="ci"><a href="https://www.linkedin.com/in/philippjbauer" rel="noopener" target="_blank">linkedin.com/in/philippjbauer</a></span>
+          <span class="ci"><a href="https://github.com/philippjbauer" rel="noopener" target="_blank">github.com/philippjbauer</a></span>
+        </p>
+        <p class="logistics">
+          Authorized to work in the US (lawful permanent resident)<span class="sep">&middot;</span><span class="nb">open to remote, willing to relocate</span><span class="sep">&middot;</span>available from early&nbsp;2027<span class="sep">&middot;</span><span class="nb">German (native), English</span>
+        </p>
+      </header>
+
+      <h2>Summary</h2>
+      <p class="summary">
+        15+ years building enterprise software, the last seven on applied AI. I build agent loops that check their own output before a human
+        reads the diff, retrieval that names the passage it answered from, and LLM pipelines that run on hardware the client owns because the
+        data cannot leave. Most of it sits in regulated environments (HIPAA, SOC&nbsp;2), where I take requirements from business stakeholders
+        and hand the system to their engineers. C#/.NET and Python, Azure and self-hosted GPUs. Looking for staff or principal-level work on
+        agentic AI platforms.
+      </p>
+
+      <h2>Work Experience</h2>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Senior Software &amp; AI Architect</h3>
+          <p class="job-when">2019 &ndash; present</p>
+        </div>
+        <p class="job-org">
+          CODE Group / EPS Software &middot; Remote &middot; joined in 2019 as a senior software developer &middot; leads a five-engineer team
+          alongside client engineers and project managers
+        </p>
+        <ul>
+          <li>
+            Built a containerized coding agent for my own delivery work. It writes the change, runs the tests, and verifies its own result
+            before I review. It ships as a Dev Container a colleague can start from, and I teach it in the CODE Presents course
+            <a href="https://www.youtube.com/watch?v=dxkych9rBC4" rel="noopener" target="_blank"><em>Closing the Development Loop with Containerized Agents</em></a>
+            (November 2026).
+          </li>
+          <li>
+            Architected and built the meeting-intelligence platform our own teams run daily. Multi-tenant and domain-driven: serverless media
+            processing, GPU-accelerated transcription, hybrid lexical and vector search over transcript passages, and a conversational layer
+            that answers questions about a recording with citations back to the source. Provisioned end to end in Bicep. It started on
+            Kubernetes; the workloads never needed that much machinery, so it moved to Azure Container Apps and the bill came down with it.
+            Runs in Azure or fully containerized on-premises, and is live with a partner organization ahead of general release.
+          </li>
+          <li>
+            Put a document processing system into production for a debt collection agency: 200 to 300 pieces of consumer mail a day through
+            OCR, multi-stage LLM and computer-vision classification, and demographic extraction, with an ASP.NET Core review queue in front of
+            every output. Per-document review time fell <strong>80&ndash;90%</strong>. It runs on .NET&nbsp;10 and Semantic Kernel on a Proxmox
+            host with Nvidia RTX PRO 6000 GPUs, with no path to the public internet.
+          </li>
+          <li>
+            Reconstructed 25+ years of undocumented insurance logic from claims and billing data alone: 22,000 lines of forensic SQL reconciling
+            legacy and modern invoices line by line, recovering tax, fee, stop-loss, and eligibility rules from a Visual FoxPro estate of roughly
+            1.2&nbsp;million lines and 350 tables. The comparison surfaced ledger discrepancies that were a regulatory problem in themselves. The
+            findings fed a .NET&nbsp;6 and Azure rebuild for a health and dental third-party administrator (TPA).
+          </li>
+          <li>
+            Made the case to the TPA's leadership for domain-driven design (DDD), then planned the slicing so later slices would land
+            without rebuilding a big ball of mud. Billing went first: the insurer was losing about a day every week to reconciliation between
+            disparate legacy systems, with manual rollback and reapplication behind it. Third-party instructors ran the DDD sessions I set up.
+          </li>
+          <li>
+            Built clinical wound measurement end to end: a .NET MAUI iOS app that uses ARKit and SceneKit to guide capture with surface
+            detection, haptic distance feedback, and automatic shutter release, plus a Python pipeline that reconstructs the wound surface by
+            segmentation and photogrammetry, returning depth, volume, and surface area from a stateless FastAPI worker. Boundary detection runs
+            on a Detectron2 Mask R-CNN I trained and served from a containerized Flask/Gunicorn API on Kubernetes in Azure AI Foundry.
+          </li>
+          <li>
+            Delivered CODE Presents technical training as instructor and producer: nine published video courses on local and open-source LLMs,
+            agent systems, machine learning, and AI-assisted development, plus a standing column in CODE Magazine.
+          </li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Freelancer &amp; Consultant</h3>
+          <p class="job-when">2016 &ndash; 2019</p>
+        </div>
+        <p class="job-org">United States</p>
+        <ul>
+          <li>Moved from Germany to the US. Freelance full-stack development, server administration, and network management for clients in healthcare, commerce, and manufacturing, plus a CODE contract on a fleet, tire, and rim inventory system for an international tire manufacturer.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Web Designer &amp; Developer</h3>
+          <p class="job-when">2012 &ndash; 2016</p>
+        </div>
+        <p class="job-org">Signalfabrik, Oldenburg (2012&ndash;2015) &middot; <span lang="de">B&uuml;ro Oberhoff</span>, Hamburg (2015&ndash;2016) &middot; Germany</p>
+        <ul>
+          <li>
+            Ran the full lifecycle on small teams: requirements and proposals, design, development, deployment. WordPress and TYPO3 on
+            PHP/MySQL plus the web servers underneath, for clients including
+            <a href="https://www.partfactory.com" rel="noopener" target="_blank">PartFactory</a> and
+            <a href="https://grindaix.de/en/" rel="noopener" target="_blank">Grindaix</a>. Followed an owner of Signalfabrik through the split
+            of that firm and carried the client work until the move to the US.
+          </li>
+        </ul>
+      </article>
+
+      <h2>Public Work in Applied AI</h2>
+      <p class="summary">Client code is proprietary, so this is the public record of the same stack.</p>
+
+      <div class="work-item">
+        <p><strong>Courses</strong> &middot; <a href="https://www.youtube.com/@CODEMag" rel="noopener" target="_blank">CODE Magazine channel</a></p>
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=dxkych9rBC4" rel="noopener" target="_blank">Closing the Development Loop with Containerized Agents</a> &middot; <span class="work-when">November 2026</span></li>
+          <li><a href="https://www.youtube.com/watch?v=OnumaovM4V4" rel="noopener" target="_blank">Build Intelligent Agent Systems with Semantic Kernel</a>: agent memory and tools over MCP &middot; <span class="work-when">December 2025</span></li>
+          <li><a href="https://www.youtube.com/watch?v=dgxMWqMkiz0" rel="noopener" target="_blank">Own Your AI</a>, a four-part live series on running LLMs on your own hardware: compliance, token cost, self-hosted tooling, GPU passthrough &middot; <span class="work-when">June 2026</span></li>
+          <li><a href="https://www.youtube.com/watch?v=T0XKAYccaXA" rel="noopener" target="_blank">Vibe Coding Done Right</a>: AI-assisted work held to engineering discipline &middot; <span class="work-when">May 2025</span></li>
+        </ul>
+      </div>
+
+      <div class="work-item">
+        <p>
+          <strong>Speaking</strong> &middot; <a href="https://devintersection.com/#!/speaker/Philipp%20Bauer/2855" rel="noopener" target="_blank">DEVintersection / next.GenAI 2023, 2024, 2025</a>,
+          and CODE Group's State of AI series since 2023. Sessions on no-code image generation pipelines and prompting strategy, and a panel
+          on the ethics of AI-assisted development.
+        </p>
+      </div>
+
+      <div class="work-item">
+        <p><strong>Writing and open source</strong></p>
+        <ul>
+          <li><a href="https://codemag.com/Article/2403041/You%E2%80%99re-Missing-Out-on-Open-Source-LLMs!" rel="noopener" target="_blank">You're Missing Out on Open-Source LLMs!</a> &middot; CODE Magazine, March/April 2024: compliance, IP, and the hardware math of running models in-house.</li>
+          <li><a href="https://philippbauer.org/blog/" rel="noopener" target="_blank">Articles on local AI and the economics of AI tooling</a>, plus contributions to <a href="https://github.com/tryphotino" rel="noopener" target="_blank">Photino</a>, the cross-platform .NET native-window library.</li>
+        </ul>
+      </div>
+
+      <h2>Skills</h2>
+      <dl class="stack">
+        <div>
+          <dt>Agentic systems</dt>
+          <dd>Agent loops with self-verification (tests, output checks, retry policy), tool calling over Model Context Protocol (MCP), multi-stage LLM pipelines, LLM orchestration in Semantic Kernel, sandboxed execution in Dev Containers.</dd>
+        </div>
+        <div>
+          <dt>Retrieval &amp; models</dt>
+          <dd>Retrieval-augmented generation (RAG) with hybrid lexical and vector search, embeddings and chunking over transcripts and documents, open-weight LLMs served locally, Whisper transcription, Detectron2 segmentation.</dd>
+        </div>
+        <div>
+          <dt>Languages &amp; interfaces</dt>
+          <dd>C# / .NET (through .NET&nbsp;10), Python (FastAPI, PyTorch), TypeScript/JavaScript, PHP, C++; Blazor, Angular, React, Vue, .NET MAUI for iOS.</dd>
+        </div>
+        <div>
+          <dt>Cloud, data &amp; infrastructure</dt>
+          <dd>Azure (Container Apps, Kubernetes, Container Registry, serverless media pipelines), AWS serverless, Infrastructure as Code in Bicep, CI/CD, Proxmox with GPU passthrough for on-premises inference; Azure SQL, MSSQL, MySQL, MongoDB, Redis, Cosmos DB, vector stores for embeddings.</dd>
+        </div>
+      </dl>
+
+      <h2>Education</h2>
+      <ul>
+        <li>Media Designer, Digital and Print, design and technology track (<span lang="de">Mediengestalter Digital und Print</span>), 2011: a state-recognized German apprenticeship occupation.</li>
+        <li>Technical diploma in computer science (<span lang="de">Fachabitur / Technische Hochschulreife</span>), 2008, university-entrance qualified.</li>
+        <li>Beyond work: volunteer firefighter, wildland-trained, in an Ozarks department.</li>
+      </ul>
+    </main>
+  </body>
 </html>

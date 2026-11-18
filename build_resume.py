@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render resume.html to resume.pdf.
 
-Uses the page's own @page rule (US Letter, 0.55in/0.65in margins) rather than passing
+Uses the page's own @page rule (US Letter, 0.5in/0.6in margins) rather than passing
 page margins here, so the PDF and the HTML stay in one place. print_background is off:
 the résumé draws its rules with borders, not backgrounds, so nothing is lost, and the
 file stays text-first for ATS parsers.
