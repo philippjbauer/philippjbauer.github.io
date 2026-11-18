@@ -5,6 +5,11 @@
   standard headings, no text boxes or graphics, contact in the body, standard font,
   acronyms spelled out on first mention. Keep the wording in step with index.html and
   LinkedIn: same titles, same dates, 15+ years everywhere.
+  Wording mirrors the vocabulary of staff-level agentic-AI platform roles where the work
+  genuinely matches (RESEARCH.md 6). Anything the record does not support stays out: no
+  observability or SLO claims, no invented accuracy or cost figures.
+  Two pages by construction. Rebuild and check the page count after any wording change:
+  build_resume.py prints nothing about it, so use pymupdf (page_count, lowest text y).
 -->
 <html lang="en">
 <head>
@@ -26,97 +31,125 @@
   body {
     margin: 0;
     font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
-    font-size: 10pt;
-    line-height: 1.28;
-    color: #111;
+    font-size: 9.9pt;
+    line-height: 1.29;
+    color: #16181a;
     hyphens: none;
     text-align: left;
   }
+  @media screen {
+    html {
+      background: #e9eaec;
+    }
+    body {
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.5in 0.65in;
+      background: #fff;
+    }
+  }
   h1 {
     margin: 0;
-    font-size: 20pt;
-    line-height: 1.15;
-    letter-spacing: 0.01em;
+    font-size: 21pt;
+    line-height: 1.08;
+    letter-spacing: -0.012em;
   }
   .headline {
-    margin: 0.1rem 0 0;
+    margin: 0.16rem 0 0;
     font-size: 11.5pt;
     font-weight: bold;
     color: #8a3f20;
   }
   .contact {
-    margin: 0.5rem 0 0;
+    margin: 0.36rem 0 0;
+    font-size: 9.3pt;
+    color: #45494d;
   }
   .logistics {
-    margin: 0.2rem 0 0;
-    font-size: 9.5pt;
+    margin: 0.14rem 0 0;
+    font-size: 9.3pt;
+    color: #45494d;
+  }
+  header {
+    padding-bottom: 0.4rem;
+    border-bottom: 1.5pt solid #8a3f20;
   }
   h2 {
-    margin: 0.85rem 0 0.3rem;
-    font-size: 11pt;
-    padding-bottom: 0.1rem;
-    border-bottom: 1px solid #999;
+    margin: 0.76rem 0 0.28rem;
+    font-size: 9.7pt;
+    font-weight: bold;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #8a3f20;
+    padding-bottom: 0.12rem;
+    border-bottom: 0.75pt solid #c9cdd1;
+    break-after: avoid;
   }
   p {
     margin: 0;
+  }
+  strong {
+    color: #16181a;
   }
   .role {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    margin-top: 0.54rem;
     break-after: avoid;
   }
   h3 {
-    margin: 0.5rem 0 0;
-    font-size: 10.5pt;
+    margin: 0;
+    font-size: 10.6pt;
     break-after: avoid;
-  }
-  .role:first-of-type h3,
-  .role h3 {
-    margin-top: 0;
   }
   .dates {
     white-space: nowrap;
-    font-size: 9.5pt;
+    font-size: 9.4pt;
+    color: #45494d;
+    font-variant-numeric: tabular-nums;
   }
   .org {
-    margin: 0.05rem 0 0;
+    margin: 0.06rem 0 0;
     font-style: italic;
+    font-size: 9.4pt;
+    color: #45494d;
+    break-after: avoid;
   }
   ul {
-    margin: 0.3rem 0 0;
-    padding-left: 1.05rem;
+    margin: 0.28rem 0 0;
+    padding-left: 1rem;
   }
   li {
-    margin: 0 0 0.18rem;
+    margin: 0 0 0.16rem;
     break-inside: avoid;
   }
   li:last-child {
     margin-bottom: 0;
   }
   .gap {
-    margin-top: 0.65rem;
+    margin-top: 0.54rem;
     break-inside: avoid;
   }
-  .gap h3 {
-    margin: 0;
-  }
   .skills p {
-    margin: 0 0 0.2rem;
+    margin: 0 0 0.18rem;
+    padding-left: 0.9rem;
+    text-indent: -0.9rem;
   }
   .plain-list {
-    margin: 0.3rem 0 0;
-    padding-left: 1.05rem;
+    margin: 0.28rem 0 0;
+    padding-left: 1rem;
   }
   .plain-list li {
-    margin: 0 0 0.18rem;
+    margin: 0 0 0.17rem;
   }
   .note {
-    font-size: 9.5pt;
-    margin-top: 0.25rem;
+    font-size: 9.4pt;
+    color: #45494d;
+    margin-top: 0.22rem;
   }
   a {
-    color: #111;
+    color: #16181a;
     text-decoration: none;
   }
 </style>
@@ -127,37 +160,40 @@
   <h1>Philipp Bauer</h1>
   <p class="headline">Senior Software &amp; AI Architect</p>
   <p class="contact">
-    Mountain View, Arkansas, USA &middot; hello@philippbauer.org &middot;
-    linkedin.com/in/philippjbauer &middot; github.com/philippjbauer &middot;
-    blog.philippbauer.org
+    Mountain View, Arkansas, USA &middot;&nbsp;philippbauer.org &middot;&nbsp;hello@philippbauer.org
+    &middot;&nbsp;linkedin.com/in/philippjbauer &middot;&nbsp;github.com/philippjbauer
   </p>
   <p class="logistics">
-    Seeking principal AI architect or forward deployed engineer roles &middot; Authorized to
-    work in the US (permanent resident) &middot; Open to remote, willing to relocate
-    &middot; Available from early 2027
+    Seeking staff or principal software engineer and AI architect roles: agentic AI
+    platforms, enterprise AI integration, forward deployed engineering &middot;&nbsp;Authorized to
+    work in the US (permanent resident) &middot;&nbsp;Open to remote, willing to relocate
+    &middot;&nbsp;Available from early 2027
   </p>
 </header>
 
 <h2>Summary</h2>
 <p>
-  Senior software and AI architect with 15+ years building enterprise systems in C# / .NET
-  and Azure, mostly in HIPAA and SOC 2 regulated environments: debt collection, health and
-  dental insurance administration, media production. Recent work covers multi-tenant cloud
-  platforms, legacy platform modernization, and applied AI in production, from large
-  language model (LLM) features to trained computer vision models and speech transcription,
-  in Azure or fully on client-owned hardware. Speaks and teaches on practical AI
-  integration, and writes for CODE Magazine.
+  Senior software and AI architect with 15+ years building and operating enterprise systems in
+  C# / .NET and Python on Azure, mostly in HIPAA and SOC 2 regulated environments: debt
+  collection, health and dental insurance administration, media production. The last few years went
+  into AI that runs in production: agentic and multi-stage large language model (LLM) systems,
+  retrieval-augmented generation (RAG) that cites its sources, trained computer vision models, and
+  speech transcription. They run on graphics processing unit (GPU) hardware the client owns or in
+  Azure, and the data stays inside the customer's network either way. Sets standards other people
+  build to, from a domain-driven design adoption sold to leadership to coding agents that must verify
+  their own output, and teaches the same material: nine published courses, conference sessions since
+  2023, CODE Magazine author.
 </p>
 
 <h2>Skills</h2>
 <div class="skills">
-  <p><strong>Programming:</strong> C# / .NET through .NET 10, Python, TypeScript and JavaScript, C++, PHP, Objective-C</p>
-  <p><strong>AI and machine learning:</strong> LLM integration and fine-tuning (commercial APIs and open-source models), Semantic Kernel, agent systems, Whisper speech transcription, vector search and semantic retrieval, Detectron2 instance segmentation, containerized inference</p>
-  <p><strong>Architecture:</strong> domain-driven design (DDD), multi-tenant systems, event-driven architecture and microservices, distributed cloud architecture, GPU-accelerated and serverless processing pipelines</p>
-  <p><strong>Cloud and DevOps:</strong> Azure, AWS, Kubernetes and Azure Container Apps, infrastructure as code in Bicep, containerized GPU inference, continuous integration and delivery (CI/CD)</p>
-  <p><strong>Data:</strong> MSSQL and Azure SQL, MySQL, MongoDB, Redis, Cosmos DB, vector databases for embeddings</p>
-  <p><strong>Frontend:</strong> Blazor, Angular, React, Vue, .NET MAUI, HTML and CSS, SASS</p>
-  <p><strong>Regulated environments:</strong> HIPAA, SOC 2, client-owned hardware deployments</p>
+  <p><strong>Programming:</strong> C# / .NET through .NET 10, Python, TypeScript and JavaScript, SQL</p>
+  <p><strong>AI and machine learning:</strong> agentic and multi-stage LLM systems, LLM integration and fine-tuning (commercial APIs and open-source models), Semantic Kernel, retrieval-augmented generation (RAG), prompt engineering, vector search and semantic retrieval, evaluating model output through human review and automated checks, Whisper speech transcription, Detectron2 instance segmentation</p>
+  <p><strong>Architecture:</strong> domain-driven design (DDD), multi-tenant platforms, cloud-native microservices, event-driven architecture, distributed systems, API design, GPU-accelerated and serverless processing pipelines</p>
+  <p><strong>Cloud and DevOps:</strong> Azure, AWS, Azure Container Apps and Kubernetes, infrastructure as code in Bicep, continuous integration and delivery (CI/CD)</p>
+  <p><strong>Data:</strong> MSSQL and Azure SQL, MySQL, MongoDB, Redis, Cosmos DB, vector stores for embeddings</p>
+  <p><strong>Frontend:</strong> Blazor, Angular, React, Vue, .NET MAUI, HTML and CSS, accessible markup (WCAG 2.2 contrast, keyboard navigation, semantic headings)</p>
+  <p><strong>Regulated environments:</strong> HIPAA, SOC 2, deployments on client-owned hardware with no path to the public internet</p>
   <p><strong>Spoken:</strong> German (native), English</p>
 </div>
 
@@ -169,14 +205,14 @@
 </div>
 <p class="org">CODE Group / EPS Software &middot; Remote &middot; joined 2019 as Senior Software Developer</p>
 <ul>
-  <li>Architected and built a meeting-intelligence platform: multi-tenant, domain-driven, distributed design with serverless media processing and GPU-accelerated transcription, conversational AI that answers questions about recordings with citations, and hybrid lexical and vector search over transcript passages. The whole environment is provisioned in Bicep. It started on Kubernetes and moved to Azure Container Apps once the workloads proved not to need an orchestrator of that size. It runs in Azure or fully containerized on-premises for data-sensitive deployments, is in daily use by our own teams, and is live with a partner organization ahead of general release.</li>
-  <li>Built a document processing system in .NET 10 with Semantic Kernel and a multi-stage LLM and computer vision classification chain. It reads 200&ndash;300 pieces of consumer mail a day for a debt collection agency, running optical character recognition (OCR), categorization, and demographic extraction automatically. It runs entirely on-premises on a Proxmox host with Nvidia RTX PRO 6000 GPUs, with no path to the public internet, behind an ASP.NET Core review UI. Per-document review time fell 80&ndash;90%.</li>
-  <li>Reconstructed 25+ years of undocumented insurance business logic from a legacy Visual FoxPro platform (roughly 1.2 million lines of code, 350 tables) using claims and billing data alone. Wrote about 22,000 lines of forensic SQL to reconcile legacy and modern invoices line by line and recover the tax, fee, stop-loss, and eligibility rules behind them, which drove a rebuild in .NET 6 and Azure for a health and dental third-party administrator (TPA). The line-by-line comparison surfaced ledger discrepancies that were a regulatory red flag in their own right.</li>
-  <li>Moved that same system to domain-driven design (DDD). Convinced leadership it was the right direction, then planned the slicing so later slices could land without recreating a big ball of mud. Billing came first: the insurer was losing roughly a day every week to reconciliation between disparate legacy systems, with manual rollback and reapplication behind it, making billing both the largest reliability drain and the largest source of manual error.</li>
-  <li>Built a .NET MAUI iOS application that walks clinicians through standardized wound-image capture. ARKit and SceneKit give real-time surface detection, a positioning overlay, and haptic distance feedback; the photo fires automatically and syncs to the analysis backend. Behind it, a Python pipeline rebuilds the wound surface from those captures by segmentation and photogrammetry, and a stateless FastAPI worker computes depth, volume, and surface area for the Vue 3D viewer.</li>
-  <li>Trained a Detectron2 Mask R-CNN instance-segmentation model for wound boundary detection and served it from a containerized Flask and Gunicorn API in Azure Container Registry, deployed to Kubernetes in Azure AI Foundry. Each capture is normalized and gets a first-pass annotation, so labeling starts from a draft.</li>
-  <li>Led a five-engineer team alongside client-side engineers and project managers, and set up their training, including domain-driven design sessions run with third-party instructors.</li>
-  <li>Delivered <em>CODE Presents</em> technical training as instructor and producer: nine published video courses on local and open-source LLMs, machine learning, agents, and AI-assisted development.</li>
+  <li><strong>Built a meeting-intelligence platform end to end</strong>: multi-tenant, domain-driven, distributed, with serverless media processing, GPU-accelerated speech transcription, and a conversational layer that answers questions about the recordings from hybrid lexical and vector retrieval and cites the transcript passage behind each answer. Provisioned in Bicep, in daily use by our own teams, live with a partner organization.</li>
+  <li><strong>Right-sized the infrastructure twice:</strong> moved off Kubernetes to Azure Container Apps once the workloads proved not to need an orchestrator of that size, and made the environment deploy either in Azure or fully containerized on client-owned hardware, for tenants whose recordings cannot legally leave the building.</li>
+  <li><strong>Automated intake of legally sensitive mail:</strong> a document processing system in .NET 10 on Semantic Kernel, with a multi-stage chain of LLM and computer vision classification steps. Optical character recognition (OCR), categorization, and demographic extraction on 200&ndash;300 pieces of consumer mail a day for a debt collection agency, entirely on-premises on a Proxmox host with Nvidia RTX PRO 6000 GPUs, no path to the public internet, behind an ASP.NET Core review UI with a human on every classification. Per-document review time fell 80&ndash;90%.</li>
+  <li><strong>Run delivery work through a containerized coding agent:</strong> a dev container where the agent writes the change, runs the tests, and must pass them before I review the diff; published as a CODE Presents course.</li>
+  <li><strong>Recovered 25+ years of undocumented insurance business logic</strong> from a legacy Visual FoxPro platform (roughly 1.2 million lines, 350 tables) out of claims and billing data alone, with about 22,000 lines of forensic SQL reconciling legacy and modern invoices line by line. Those tax, fee, stop-loss, and eligibility rules drove a .NET 6 and Azure rebuild for a health and dental third-party administrator (TPA), and the comparison surfaced ledger discrepancies that were a regulatory red flag in their own right.</li>
+  <li><strong>Sold that client's leadership on domain-driven design</strong> and sliced the migration so later slices would not recreate a big ball of mud. Billing went first because it was both the largest reliability drain and the largest source of manual error: the insurer lost roughly a day a week reconciling disparate legacy systems by hand.</li>
+  <li><strong>Built a wound-measurement system from iOS capture to trained model:</strong> a .NET MAUI iOS app that standardizes capture with ARKit surface detection and haptic distance feedback; a Python pipeline that rebuilds the wound surface by segmentation and photogrammetry and computes depth, volume, and surface area in a FastAPI worker; and a trained Detectron2 Mask R-CNN segmentation model for wound boundaries, served containerized on Kubernetes in Azure AI Foundry.</li>
+  <li><strong>Led a five-engineer team</strong> alongside client-side engineers and project managers, and set up their training, including DDD sessions run with third-party instructors.</li>
 </ul>
 
 <div class="role">
@@ -185,8 +221,8 @@
 </div>
 <p class="org">USA</p>
 <ul>
-  <li>Relocated from Germany to the US; freelance full-stack development, server administration, and network management for healthcare, commerce, and manufacturing clients.</li>
-  <li>Contracted for CODE on a fleet, tire, and rim inventory and tracking solution for a global tire manufacturer.</li>
+  <li><strong>Relocated from Germany to the US</strong>; freelance full-stack development, server administration, and network management for healthcare, commerce, and manufacturing clients.</li>
+  <li><strong>Contracted for CODE</strong> on a fleet, tire, and rim inventory and tracking solution for a global tire manufacturer.</li>
 </ul>
 
 <div class="role">
@@ -195,7 +231,7 @@
 </div>
 <p class="org">Büro Oberhoff &middot; Hamburg, Germany</p>
 <ul>
-  <li>Followed one of the owners of Signalfabrik through the split of that firm and carried on the existing German client projects until the move to the US.</li>
+  <li><strong>Followed one of the owners of Signalfabrik</strong> through that firm's split and carried on the existing German client projects until the move to the US.</li>
 </ul>
 
 <div class="role">
@@ -204,9 +240,8 @@
 </div>
 <p class="org">Signalfabrik &middot; Oldenburg, Germany</p>
 <ul>
-  <li>Ran the full project lifecycle on small teams: customer engagement and requirements, project proposals, design, development, deployment.</li>
-  <li>Built WordPress and TYPO3 sites on PHP and MySQL, and administered the web servers behind them.</li>
-  <li>Client work included PartFactory, a B2B parts platform, plus public sites for a medical-supplement maker, a medical-device supplier, and a cooling-lubricants nozzle supplier.</li>
+  <li><strong>Ran the full project lifecycle on small teams:</strong> requirements, proposals, design, development, deployment, on WordPress and TYPO3 sites and the web servers behind them.</li>
+  <li><strong>Client work included</strong> PartFactory, a B2B parts platform, plus public sites for a medical-supplement maker, a medical-device supplier, and a nozzle supplier.</li>
 </ul>
 
 <div class="gap">
@@ -219,14 +254,14 @@
 
 <h2>Speaking &amp; Publications</h2>
 <p class="note">
-  The client work above is proprietary, so the courses, sessions, and articles below stand
-  as the public record of the same stack.
+  The client work above is proprietary, so the courses, sessions, and articles below are the public
+  record of the same stack.
 </p>
 <ul class="plain-list">
-  <li><strong>Conference speaker</strong>: DEVintersection / next.GenAI 2023, 2024, and 2025 (sessions, a workshop, and a panel on AI-assisted software development), plus CODE Group's <em>State of AI</em> series since 2023 (speaker profile: devintersection.com).</li>
-  <li><strong>Nine published video courses</strong> on the CODE Magazine channel, among them <em>Closing the Development Loop with Containerized Agents</em> (Nov 2026), the four-part <em>Own Your AI &ndash; Before Someone Else Owns Your Data</em> series on running LLMs on your own hardware (Jun 2026), and <em>Build Intelligent Agent Systems with Semantic Kernel</em> (Dec 2025).</li>
+  <li><strong>Conference speaker</strong>: DEVintersection / next.GenAI 2023, 2024, and 2025 (sessions, a workshop, and a panel on AI-assisted development), plus CODE Group's <em>State of AI</em> series since 2023 (speaker profile: devintersection.com).</li>
+  <li><strong>Nine published video courses</strong> on the CODE Magazine channel: <em>Closing the Development Loop with Containerized Agents</em> (Nov 2026), <em>Build Intelligent Agent Systems with Semantic Kernel</em> (Dec 2025), <em>Vibe Coding Done Right</em> (May 2025), and the four-part <em>Own Your AI</em> series on running LLMs on your own hardware (Jun 2026).</li>
   <li><strong>Contributing author</strong>, CODE Magazine: "You're Missing Out on Open-Source LLMs!", March/April 2024 issue.</li>
-  <li><strong>Blog</strong>, blog.philippbauer.org: "Go Local or Go Broke!" (Apr 2026) and "The AI Infrastructure Bubble &ndash; What Actually Gets Built" (Mar 2026).</li>
+  <li><strong>Blog</strong>, philippbauer.org/blog/: "Go Local or Go Broke!" (Apr 2026) and "The AI Infrastructure Bubble &ndash; What Actually Gets Built" (Mar 2026), on what enterprise AI costs and who should own it.</li>
 </ul>
 
 <h2>Education</h2>
@@ -235,10 +270,10 @@
   <p class="dates">2005 &ndash; 2011</p>
 </div>
 <p>
-  Media Designer, Digital and Print, design and technology track (Mediengestalter Digital
-  und Print, Fachrichtung Gestaltung und Technik), 2011, a state-recognized German
-  apprenticeship occupation; technical diploma in computer science (Fachabitur / Technische
-  Hochschulreife), 2008, university-entrance qualified.
+  Media Designer, Digital and Print (Mediengestalter Digital und Print, a state-recognized German
+  apprenticeship), 2011, and technical diploma in computer science (Fachabitur / Technische
+  Hochschulreife), 2008, university-entrance qualified. Where a US posting asks for a computing
+  bachelor's, 15+ years of practical experience stands in.
 </p>
 
 </body>
