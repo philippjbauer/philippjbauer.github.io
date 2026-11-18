@@ -3,15 +3,15 @@ js/main.js keeps its scrollspy; every other route prefixes them with /.{% endcom
 {%- if page.url == "/" -%}{%- assign anchor = "#" -%}{%- else -%}{%- assign anchor = "/#" -%}{%- endif -%}
 <header class="site-header">
   <nav class="nav container">
-    <a class="brand" href="/#top">Philipp&nbsp;Bauer</a>
+    <a class="brand" href="/">Philipp&nbsp;Bauer</a>
     <ul class="nav-links">
+      <li><a href="/blog/"{% if page.section == "blog" %} class="active" aria-current="page"{% endif %}>Blog</a></li>
       <li><a href="{{ anchor }}expertise">Expertise</a></li>
       <li><a href="{{ anchor }}experience">Experience</a></li>
       <li><a href="{{ anchor }}open-source">Open Source</a></li>
       <li><a href="{{ anchor }}videos">Videos</a></li>
       <li><a href="{{ anchor }}speaking">Speaking</a></li>
       <li><a href="{{ anchor }}writing">Writing</a></li>
-      <li><a href="/blog/"{% if page.section == "blog" %} class="active" aria-current="page"{% endif %}>Blog</a></li>
       <li><a href="{{ anchor }}about">About</a></li>
       <li><a class="nav-cta" href="{{ anchor }}contact">Contact</a></li>
     </ul>
