@@ -1,0 +1,7 @@
+{%- assign hero = include.image | default: page.image -%}
+{%- if hero %}
+<figure class="post-hero">
+  <img src="{{ hero }}" alt="{{ include.image_alt | default: page.image_alt }}" decoding="async">
+  <figcaption class="disclaimer">Please note: Image generation and LLM research happen locally at 120W. All text is written by myself.</figcaption>
+</figure>
+{%- endif -%}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%- assign page_title = page.title | default: site.title -%}
+{%- if page.full_title -%}
+  {%- assign heading = page_title -%}
+{%- else -%}
+  {%- capture heading -%}{{ page_title }} &ndash; {{ site.title }}{%- endcapture -%}
+{%- endif -%}
+<title>{{ heading }}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<meta name="robots" content="{% if page.robots %}{{ page.robots }}{% else %}max-image-preview:large{% endif %}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="{{ page.og_title | default: heading }}">
+<meta property="og:description" content="{{ page.og_description | default: page.description | default: site.description }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+{%- assign share_image = page.image | default: site.image %}
+{%- if share_image %}
+<meta property="og:image" content="{{ share_image | absolute_url }}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ page.image_alt | default: page_title }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.og_title | default: heading }}">
+<meta name="twitter:description" content="{{ page.og_description | default: page.description | default: site.description }}">
+<meta name="twitter:image" content="{{ share_image | absolute_url }}">
+<meta name="twitter:image:alt" content="{{ page.image_alt | default: page_title }}">
+{%- endif %}
+{%- if page.head_extra %}{% include {{ page.head_extra }} %}{% endif %}
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }} &ndash; Blog" href="/blog/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjord+One&family=Inter:wght@400..700&display=swap" rel="stylesheet">
+<!-- Google needs the favicon at a path it can crawl; a data: URI is never picked up. -->
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script defer src="https://4ef9980cd175.philippbauer.org/script.js" data-website-id="0eb0f234-cb0e-4f6b-8aa2-6f019c0fffac"></script>
+</head>
+<body>
+
+<canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+{% include site-header.html %}
+
+{{ content }}
+
+{% include site-footer.html %}
+
+<script src="/assets/js/background.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

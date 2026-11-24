@@ -1,0 +1,75 @@
+---
+layout: base
+title: Blog
+description: "Articles on AI, infrastructure, and software engineering by Philipp Bauer: local and open-source models, inference costs, and the infrastructure behind them."
+section: blog
+image: /assets/img/og-card.jpg
+image_alt: "Philipp Bauer, senior software and AI architect"
+---
+<main>
+
+  {%- assign latest = site.posts | first %}
+  {%- if latest %}
+  <section class="section alt">
+    <div class="container">
+      <!-- Course-card geometry, reused: the archive reads as the same kind of artifact as
+           the video courses on the profile page, with no second card style to maintain. -->
+      <a class="video-card video-feature" href="{{ latest.url }}">
+        {%- if latest.image %}
+        <img src="{{ latest.image }}" alt="{{ latest.image_alt }}" loading="lazy" decoding="async">
+        {%- endif %}
+        <div class="video-meta">
+          <p class="eyebrow">{{ latest.date | date: "%B %-d, %Y" }}</p>
+          <h1>{{ latest.title }}</h1>
+          <p>{{ latest.description }}</p>
+          <p class="video-when">{{ latest.categories | join: " &middot; " }}</p>
+          <span class="card-link">Read the article &rarr;</span>
+        </div>
+      </a>
+
+      {%- if site.posts.size > 1 %}
+      <h2 class="subhead">All articles</h2>
+      <div class="engagement-grid">
+        {%- for post in site.posts offset:1 %}
+        <a class="engagement-card" href="{{ post.url }}">
+          <p class="eyebrow">{{ post.date | date: "%B %-d, %Y" }}</p>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.description }}</p>
+          <span class="card-link">Read &rarr;</span>
+        </a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+  </section>
+  {%- endif %}
+
+  <section class="section sign-off">
+    <div class="container">
+      <div class="who-writes-grid">
+        <figure class="about-portrait">
+          <!-- Rendered 240 CSS px wide: the 320 file is the 1x pick, the 640 the 2x pick,
+               and the 864px master stays the fallback. -->
+          <picture>
+            <source type="image/avif" srcset="/assets/img/portrait-320.avif 320w, /assets/img/portrait-640.avif 640w" sizes="240px">
+            <source type="image/webp" srcset="/assets/img/portrait-320.webp 320w, /assets/img/portrait-640.webp 640w" sizes="240px">
+            <img src="/assets/img/portrait.webp" alt="Philipp Bauer" width="864" height="1024" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <div class="who-writes-copy">
+          <h2>Who writes this</h2>
+          <p class="section-lede">
+            I am a senior software and AI architect, currently looking for staff software and AI
+            architect work. The full record &ndash; experience, video courses, speaking &ndash; is on
+            the <a href="/">profile page</a>.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/#contact">Get in touch</a>
+            <!-- <a class="btn" href="/blog/feed.xml" type="application/rss+xml">RSS feed</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

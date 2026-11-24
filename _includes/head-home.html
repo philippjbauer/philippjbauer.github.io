@@ -1,0 +1,221 @@
+<!-- Landing-page-only head extras: profile markup plus the Person/Video structured data.
+     The blog routes get their metadata from _layouts/base.html instead. -->
+<meta property="profile:first_name" content="Philipp">
+<meta property="profile:last_name" content="Bauer">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://philippbauer.org/#profile",
+  "url": "https://philippbauer.org/",
+  "name": "Philipp Bauer \u2013 Senior Software & AI Architect",
+  "inLanguage": "en",
+  "dateModified": "2026-11-16",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://philippbauer.org/#website",
+    "name": "Philipp Bauer",
+    "url": "https://philippbauer.org/",
+    "inLanguage": "en"
+  },
+  "about": { "@id": "https://philippbauer.org/#person" },
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://philippbauer.org/#person",
+    "name": "Philipp Bauer",
+    "jobTitle": "Senior Software & AI Architect",
+    "description": "Senior software and AI architect with 15+ years building enterprise systems in C# / .NET and Azure, most of it in HIPAA and SOC 2 regulated environments.",
+    "url": "https://philippbauer.org/",
+    "email": "mailto:hello@philippbauer.org",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://philippbauer.org/assets/img/portrait-alt.webp",
+      "width": 864,
+      "height": 1024,
+      "caption": "Portrait of Philipp Bauer"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "@id": "https://philippbauer.org/#code-group",
+      "name": "CODE Group / EPS Software",
+      "sameAs": [
+        "https://codemag.com",
+        "https://www.youtube.com/@CODEMag"
+      ]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mountain View",
+      "addressRegion": "AR",
+      "addressCountry": "US"
+    },
+    "workLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mountain View",
+        "addressRegion": "AR",
+        "addressCountry": "US"
+      }
+    },
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "Bildungszentrum f\u00fcr Technik und Gestaltung, Oldenburg"
+      }
+    ],
+    "knowsAbout": [
+      "C# / .NET",
+      "Azure architecture",
+      "Domain-driven design",
+      "LLM integration and local AI",
+      "Machine learning and computer vision",
+      "Multi-tenant cloud architecture",
+      "AI systems in HIPAA and SOC 2 regulated environments"
+    ],
+    "knowsLanguage": [
+      { "@type": "Language", "name": "de" },
+      { "@type": "Language", "name": "en" }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/philippjbauer",
+      "https://github.com/philippjbauer",
+      "https://philippbauer.org/blog/"
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": "https://www.youtube.com/watch?v=dxkych9rBC4",
+    "name": "Closing the Development Loop with Containerized Agents",
+    "description": "A shareable Dev Container coding agent that writes code, runs the tests, and verifies its own output: the loop from prompt to reviewed change.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/dxkych9rBC4/hqdefault.jpg",
+    "uploadDate": "2026-11-12T10:00:11-08:00",
+    "duration": "PT1H9M9S",
+    "contentUrl": "https://www.youtube.com/watch?v=dxkych9rBC4",
+    "embedUrl": "https://www.youtube.com/embed/dxkych9rBC4",
+    "isFamilyFriendly": true,
+    "uploader": { "@type": "Organization", "name": "CODE Magazine" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": "https://www.youtube.com/watch?v=dgxMWqMkiz0",
+    "name": "Part 1: Why Local AI Matters \u2013 The Case for Personal Digital Sovereignty",
+    "description": "First of the Own Your AI series: data sovereignty, compliance, and when running models on your own hardware beats hosted APIs.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/dgxMWqMkiz0/hqdefault.jpg",
+    "uploadDate": "2026-06-03T22:40:51-07:00",
+    "duration": "PT36M34S",
+    "contentUrl": "https://www.youtube.com/watch?v=dgxMWqMkiz0",
+    "embedUrl": "https://www.youtube.com/embed/dgxMWqMkiz0",
+    "isFamilyFriendly": true,
+    "uploader": { "@type": "Organization", "name": "CODE Magazine" },
+    "partOfSeries": { "@type": "Series", "name": "Own Your AI \u2013 Before Someone Else Owns Your Data" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": "https://www.youtube.com/watch?v=frPLeH0KH4A",
+    "name": "Part 2: Efficient Coding Agents that Replace Github Copilot & Claude Code",
+    "description": "Second of the Own Your AI series: token costs, context flow, and open-source coding agents as a replacement for hosted assistants.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/frPLeH0KH4A/hqdefault.jpg",
+    "uploadDate": "2026-06-10T22:29:51-07:00",
+    "duration": "PT32M5S",
+    "contentUrl": "https://www.youtube.com/watch?v=frPLeH0KH4A",
+    "embedUrl": "https://www.youtube.com/embed/frPLeH0KH4A",
+    "isFamilyFriendly": true,
+    "uploader": { "@type": "Organization", "name": "CODE Magazine" },
+    "partOfSeries": { "@type": "Series", "name": "Own Your AI \u2013 Before Someone Else Owns Your Data" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": "https://www.youtube.com/watch?v=8xCvFIMSnHY",
+    "name": "Part 3: Replace ChatGPT with Open-Source Tools",
+    "description": "Third of the Own Your AI series: Open WebUI, persistent memory, MCP, and self-hosted search.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/8xCvFIMSnHY/hqdefault.jpg",
+    "uploadDate": "2026-06-17T10:15:03-07:00",
+    "duration": "PT9M39S",
+    "contentUrl": "https://www.youtube.com/watch?v=8xCvFIMSnHY",
+    "embedUrl": "https://www.youtube.com/embed/8xCvFIMSnHY",
+    "isFamilyFriendly": true,
+    "uploader": { "@type": "Organization", "name": "CODE Magazine" },
+    "partOfSeries": { "@type": "Series", "name": "Own Your AI \u2013 Before Someone Else Owns Your Data" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": "https://www.youtube.com/watch?v=gphMywIa7mU",
+    "name": "Part 4: Setting Up an AMD Strix Halo System",
+    "description": "Fourth of the Own Your AI series: Proxmox, GPU passthrough, and llama.cpp on an AMD Strix Halo machine.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/gphMywIa7mU/hqdefault.jpg",
+    "uploadDate": "2026-06-24T22:30:47-07:00",
+    "duration": "PT18M46S",
+    "contentUrl": "https://www.youtube.com/watch?v=gphMywIa7mU",
+    "embedUrl": "https://www.youtube.com/embed/gphMywIa7mU",
+    "isFamilyFriendly": true,
+    "uploader": { "@type": "Organization", "name": "CODE Magazine" },
+    "partOfSeries": { "@type": "Series", "name": "Own Your AI \u2013 Before Someone Else Owns Your Data" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": "https://www.youtube.com/watch?v=OnumaovM4V4",
+    "name": "Build Intelligent Agent Systems with Semantic Kernel - Orchestration, Memory & MCP Tool Integration",
+    "description": "Building agent systems on Semantic Kernel: orchestration across agents, memory, and tool integration over MCP.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/OnumaovM4V4/hqdefault.jpg",
+    "uploadDate": "2025-12-10T11:18:47-08:00",
+    "duration": "PT1H15M7S",
+    "contentUrl": "https://www.youtube.com/watch?v=OnumaovM4V4",
+    "embedUrl": "https://www.youtube.com/embed/OnumaovM4V4",
+    "isFamilyFriendly": true,
+    "uploader": { "@type": "Organization", "name": "CODE Magazine" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": "https://www.youtube.com/watch?v=T0XKAYccaXA",
+    "name": "CODE Presents: Vibe Coding Done Right: AI-Assisted Productivity with Engineering Discipline",
+    "description": "AI-assisted development that holds up in production: keeping review, tests, and design intent in the loop while moving faster.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/T0XKAYccaXA/hqdefault.jpg",
+    "uploadDate": "2025-05-07T11:45:44-07:00",
+    "duration": "PT1H40M5S",
+    "contentUrl": "https://www.youtube.com/watch?v=T0XKAYccaXA",
+    "embedUrl": "https://www.youtube.com/embed/T0XKAYccaXA",
+    "isFamilyFriendly": true,
+    "uploader": { "@type": "Organization", "name": "CODE Magazine" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": "https://www.youtube.com/watch?v=U7LrpbCkn_w",
+    "name": "CODE Presents: Unlocking the Power of Azure ML Studio",
+    "description": "Machine learning beyond large language models in Azure ML Studio: training, registering, and serving models.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/U7LrpbCkn_w/hqdefault.jpg",
+    "uploadDate": "2025-04-16T10:15:46-07:00",
+    "duration": "PT51M13S",
+    "contentUrl": "https://www.youtube.com/watch?v=U7LrpbCkn_w",
+    "embedUrl": "https://www.youtube.com/embed/U7LrpbCkn_w",
+    "isFamilyFriendly": true,
+    "uploader": { "@type": "Organization", "name": "CODE Magazine" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": "https://www.youtube.com/watch?v=vq812-Ngl70",
+    "name": "CODE Presents: Harnessing Large Language Models Locally",
+    "description": "Running large language models on your own hardware: model choice, quantization, and local serving.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/vq812-Ngl70/hqdefault.jpg",
+    "uploadDate": "2023-10-25T11:21:32-07:00",
+    "duration": "PT1H18M6S",
+    "contentUrl": "https://www.youtube.com/watch?v=vq812-Ngl70",
+    "embedUrl": "https://www.youtube.com/embed/vq812-Ngl70",
+    "isFamilyFriendly": true,
+    "uploader": { "@type": "Organization", "name": "CODE Magazine" }
+  }
+]
+</script>

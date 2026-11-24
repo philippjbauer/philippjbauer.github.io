@@ -1,0 +1,20 @@
+{%- if page.previous or page.next %}
+<nav class="post-nav" aria-label="More from the blog">
+  {%- if page.previous %}
+  <a class="engagement-card post-nav-card" href="{{ page.previous.url }}" rel="prev">
+    <p class="eyebrow">Earlier</p>
+    <h3>{{ page.previous.title }}</h3>
+    <p>{{ page.previous.date | date: "%B %-d, %Y" }}</p>
+    <span class="card-link">Read &rarr;</span>
+  </a>
+  {%- endif -%}
+  {%- if page.next %}
+  <a class="engagement-card post-nav-card" href="{{ page.next.url }}" rel="next">
+    <p class="eyebrow">Later</p>
+    <h3>{{ page.next.title }}</h3>
+    <p>{{ page.next.date | date: "%B %-d, %Y" }}</p>
+    <span class="card-link">Read &rarr;</span>
+  </a>
+  {%- endif %}
+</nav>
+{%- endif -%}

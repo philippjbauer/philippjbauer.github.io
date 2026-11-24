@@ -1,0 +1,40 @@
+# Opt out of AI training, two ways.
+#
+# The first group is the cross-vendor policy token from
+# draft-kelley-aipref-training-preference-signal (IETF AIPREF, Oct 2026).
+# Anthropic has begun implementing it; Google, Microsoft and OpenAI have
+# committed to it, Google aiming at 2027. Parsers that do not know the token
+# ignore the group, so nothing else changes. The draft is work in progress, so
+# re-check the token spelling before relying on it.
+#
+# Disallow means "against this use", not "do not crawl": a consumer that
+# honors it may still fetch, just not train.
+User-agent: __usage_ai-training
+Disallow: /
+
+# Per-vendor training tokens honored today. Google-Extended and
+# Applebot-Extended are control tokens with no crawler behind them; they only
+# withhold what Googlebot and Applebot already collected. Do not add an Allow
+# for Google-Extended: an unspecified Google-Extended lets the group above
+# apply.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Amazonbot
+User-agent: meta-externalagent
+User-agent: Bytespider
+User-agent: CCBot
+Disallow: /
+
+# Search crawlers and user-triggered fetchers (OAI-SearchBot,
+# Claude-SearchBot, PerplexityBot, ChatGPT-User) fall through to this group.
+# Blocking training does not remove the site from AI answers.
+# A named group replaces this one rather than adding to it, which is why the
+# training group above repeats Disallow: / instead of relying on it.
+User-agent: *
+Allow: /
+
+# Host-wide directive: it belongs to this hostname only, so it has to be served from the
+# same apex the canonical URLs use.
+Sitemap: https://philippbauer.org/sitemap.xml

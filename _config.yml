@@ -1,0 +1,67 @@
+# Site settings
+#
+# The landing page is the profile page at /; the blog lives under /blog/.
+# Post slugs are unchanged from the old blog.philippbauer.org site, so the Cloudflare
+# redirect rule blog.philippbauer.org/* -> https://philippbauer.org/blog/:splat lands on
+# the same article, and the feed keeps answering at the redirected /feed.xml path.
+
+title: Philipp Bauer
+description: Articles and insights on AI, infrastructure, and software engineering.
+author: Philipp Bauer
+email: hello@philippbauer.org
+url: "https://philippbauer.org" # canonical host: the apex, matching CNAME
+github_username: philippjbauer
+twitter_username: ""
+
+# Everything in the page head is written in _layouts/base.html from these front matter
+# keys: title, full_title, description, og_title, og_description, og_type, image,
+# image_alt, robots, head_extra. jekyll-seo-tag is deliberately not used: the profile
+# page needs profile:* and VideoObject markup it cannot emit, and running both would
+# duplicate every og: tag.
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+feed:
+  path: /blog/feed.xml
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    line_numbers: false
+    guess_lang: false
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      section: blog
+      permalink: /blog/:title/
+  # resume.html has no front matter of its own (build_resume.py renders it as-is), so its
+  # noindex status has to reach the sitemap from here. The PDF is a derived download and the
+  # benchmark page under assets/posts is embedded material: neither is a page of its own.
+  - scope:
+      path: "resume.html"
+    values:
+      sitemap: false
+  - scope:
+      path: "resume.pdf"
+    values:
+      sitemap: false
+  - scope:
+      path: "assets/posts"
+    values:
+      sitemap: false
+
+exclude:
+  - build_resume.py
+  - release_branch.sh
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
